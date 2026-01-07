@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>⋆ 🎀 𝒫𝒽☯𝓉🍬 𝒜𝓁𝒷𝓊𝓂 🎀 ⋆</title>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://luckyleafartstudio.nekoweb.org/img/bow.png"
+		/>
+		<style>
+			@font-face {
+			  font-family: 'kindergarten';
+			  src: url('fonts/kindergarten.ttf') format('truetype');
+			}
+
+			@font-face {
+			  font-family: 'Autumn Crush';
+			  src: url('fonts/Autumn Crush.ttf') format('truetype');
+			}
+
+			body {
+			  margin: 0;
+			  padding: 0;
+			  background-image: url("https://i.pinimg.com/736x/1d/21/7c/1d217cf6006d1365714b8dfec49b5bd3.jpg");
+			  font-family: 'kindergarten';
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  justify-content: center;
+			  min-height: 100vh;
+			  overflow-x: hidden;
+			}
+
+			/* Main container to control overall size */
+			.main-container {
+			  transform: scale(0.7);
+			  transform-origin: center;
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			}
+
+			/* Banner */
+			.banner {
+			  background: url("https://luckyleafartstudio.nekoweb.org/img/Banner.jpg") center/cover no-repeat;
+			  width: 500px;
+			  height: 150px;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  border-radius: 10px;
+			  margin-bottom: 30px;
+			  box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+			  text-shadow: 2px 2px 5px rgba(255,255,255,0.6);
+			}
+
+			/* Notebook container */
+			.notebook {
+			  position: relative;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  width: 1000px;
+			  height: 800px;
+			  background-color: transparent;
+			}
+
+			/* Left and right pages */
+			.page {
+			  width: 45%;
+			  height: 90%;
+			  background-size: cover;
+			  background-position: center;
+			  border-radius: 30px;
+			  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  justify-content: center;
+			  padding: 10px;
+			  box-sizing: border-box;
+			  text-align: center;
+			}
+
+			.left-page {
+			  background-image: url("https://luckyleafartstudio.nekoweb.org/img/left.png");
+			}
+
+			.right-page {
+			  background-image: url("https://luckyleafartstudio.nekoweb.org/img/right.png");
+			}
+
+			/* Stickers */
+			.sticker {
+				position: fixed;
+				z-index: 5;
+				pointer-events: none;
+				opacity: 0.9;
+				transition: transform 0.3s ease;
+			}
+
+			.sticker:hover {
+				transform: scale(1.1);
+			}
+
+			.sticker-top-left {
+				top: 20px;
+				left: 75px;
+				width: 210px;
+			}
+
+			/* Container for top left sticker and bubble */
+			.desktop_view {
+				position: fixed;
+				top: 15px;
+				left: 80px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0px;
+				z-index: 5;
+			}
+
+			/* Container for bottom right sticker and bubble */
+			.go_home {
+				position: fixed;
+				bottom: 80px;
+				right: 100px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0px;
+				z-index: 5;
+			}
+
+			.sticker-bottom-right {
+				width: 140px;
+				opacity: 0.9;
+				transition: transform 0.3s ease;
+			}
+
+			.sticker-bottom-right:hover {
+				transform: scale(1.1);
+			}
+
+			/* Spiral */
+			.spiral {
+			  position: absolute;
+			  top: 10%;
+			  bottom: 10%;
+			  left: 50%;
+			  transform: translateX(-50%);
+			  width: 40px;
+			  background: url("https://luckyleafartstudio.nekoweb.org/img/spiral-ring.png") center/contain repeat-y;
+			}
+
+			/* Images inside pages - FIXED SIZE */
+			.photo {
+			  width: 320px;
+			  height: 400px;
+			  object-fit: cover;
+			  border-radius: 8px;
+			  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+			  margin-bottom: 10px;
+			  cursor: pointer;
+			  transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.photo:hover {
+			  transform: scale(1.05);
+			  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+			}
+
+			/* Description text below photo */
+			.desc {
+			  font-size: 16px;
+			  color: #2c5c8c;
+			  background-color: rgba(255,255,255,0.7);
+			  padding: 5px 10px;
+			  border-radius: 5px;
+			  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+			  max-width: 90%;
+			  line-height: 1.4;
+			  min-height: 50px;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			}
+
+			/* Page numbers */
+			.page-number {
+			  position: absolute;
+			  bottom: 50px;
+			  font-size: 30px;
+			  color: #3173b6;
+			}
+			.pg-left { left: 25%; }
+			.pg-right { right: 25%; }
+
+			/* Buttons */
+			.button {
+			  margin-top: 25px;
+			  display: flex;
+			  gap: 200px;
+			}
+
+			button {
+			  background: none;
+			  border: none;
+			  color: #3674B5;
+			  font-size: 48px;
+			  font-family: 'Autumn Crush';
+			  text-shadow: 2px 4px 6px rgba(0,0,0,0.25);
+			  cursor: pointer;
+			  transition: transform 0.2s ease;
+			}
+
+			button:hover {
+			  transform: scale(1.1);
+			}
+
+			/* Lightbox Modal */
+			.lightbox {
+			  display: none;
+			  position: fixed;
+			  z-index: 1000;
+			  left: 0;
+			  top: 0;
+			  width: 100%;
+			  height: 100%;
+			  background-color: rgba(0, 0, 0, 0.9);
+			  animation: fadeIn 0.3s ease;
+			}
+
+			@keyframes fadeIn {
+			  from { opacity: 0; }
+			  to { opacity: 1; }
+			}
+
+			.lightbox-content {
+			  position: relative;
+			  margin: auto;
+			  padding: 20px;
+			  width: 90%;
+			  max-width: 800px;
+			  height: 100%;
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  justify-content: center;
+			}
+
+			.lightbox-image {
+			  max-width: 100%;
+			  max-height: 80vh;
+			  border-radius: 10px;
+			  box-shadow: 0 5px 30px rgba(255,255,255,0.3);
+			  animation: zoomIn 0.3s ease;
+			}
+
+			@keyframes zoomIn {
+			  from { transform: scale(0.7); }
+			  to { transform: scale(1); }
+			}
+
+			.lightbox-desc {
+			  margin-top: 20px;
+			  font-size: 20px;
+			  color: #fff;
+			  background-color: rgba(54, 116, 181, 0.8);
+			  padding: 15px 25px;
+			  border-radius: 10px;
+			  text-align: center;
+			  max-width: 600px;
+			}
+
+			.close {
+			  position: absolute;
+			  top: 20px;
+			  right: 40px;
+			  color: #fff;
+			  font-size: 50px;
+			  font-weight: bold;
+			  cursor: pointer;
+			  transition: transform 0.2s ease;
+			  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+			}
+
+			.close:hover {
+			  transform: scale(1.2);
+			  color: #91C8E4;
+			}
+
+			/* CSS talk bubble */
+			.talk-bubble {
+				margin: 0;
+				display: inline-block;
+				position: relative;
+				width: 140px;
+				height: auto;
+				background-color: #4682A9;
+				border-radius: 8px;
+				margin-bottom: 0px;
+			}
+
+			/* Triangle pointing down */
+			.tri-right.btm-right:after{
+				content: ' ';
+				position: absolute;
+				width: 0;
+				height: 0;
+				left: 90%;
+				transform: translateX(-50%);
+				bottom: -20px;
+				border: 12px solid;
+				border-color: #4682A9 transparent transparent transparent;
+			}
+
+			/* talk bubble contents */
+			.talktext{
+				padding: 0.8em;
+				text-align: center;
+				line-height: 1.3em;
+				color: #FFFBDE;
+				font-size: 14px;
+			}
+
+			.talktext p{
+				-webkit-margin-before: 0em;
+				-webkit-margin-after: 0em;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Top Left Sticker with Text Bubble -->
+		<div class="desktop_view">
+			<div class="talk-bubble tri-right btm-right">
+				<div class="talktext">
+					<p>This is meant for desktop viewing.</p>
+				</div>
+			</div>
+			<img
+				src="https://luckyleafartstudio.nekoweb.org/img/%C3%B0%C2%94%C2%98%C2%93-removebg-preview.png"
+				alt="Sticker 1"
+				class="sticker sticker-top-left"
+			/>
+		</div>
+
+		<!-- Bottom Right Sticker with Text Bubble -->
+		<div class="go_home">
+			<div class="talk-bubble tri-right btm-right">
+				<div class="talktext">
+					<p>
+						Click here to go back
+						<a href="home.html">
+							<b>home!</b>
+						</a>
+					</p>
+				</div>
+			</div>
+			<a href="home.html">
+				<img
+					src="https://luckyleafartstudio.nekoweb.org/img/download__2_-removebg-preview.png"
+					alt="Sticker 2"
+					class="sticker-bottom-right"
+				/>
+			</a>
+		</div>
+
+		<div class="main-container">
+			<div class="banner"></div>
+
+			<div class="notebook">
+				<div class="page left-page">
+					<img
+						id="left-photo"
+						class="photo"
+						src=""
+						alt="Photo Left"
+					/>
+					<div id="left-desc" class="desc"></div>
+				</div>
+
+				<div class="spiral"></div>
+
+				<div class="page right-page">
+					<img
+						id="right-photo"
+						class="photo"
+						src=""
+						alt="Photo Right"
+					/>
+					<div id="right-desc" class="desc"></div>
+				</div>
+
+				<span class="page-number pg-left" id="pg-left">Pg 1</span>
+				<span class="page-number pg-right" id="pg-right">Pg 2</span>
+			</div>
+
+			<div class="button">
+				<button id="prev">Prev</button>
+				<button id="next">Next</button>
+			</div>
+		</div>
+
+		<!-- Lightbox Modal -->
+		<div id="lightbox" class="lightbox">
+			<span class="close">&times;</span>
+			<div class="lightbox-content">
+				<img
+					id="lightbox-img"
+					class="lightbox-image"
+					src=""
+					alt="Enlarged Photo"
+				/>
+				<div id="lightbox-desc" class="lightbox-desc"></div>
+			</div>
+		</div>
+
+		<script>
+			const photos = [
+			  {
+			    left: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/5d66b3e8-d74b-40aa-969c-7fd9405ec0a7.jpg",
+			      desc: "me and couasin date at nail salon day 1 first stoped!"
+			    },
+			    right: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/15ff9c2e-d48a-48aa-aa4b-3fe45564bcf9.jpg",
+			      desc: "2nd destination dating at starbucks."
+			    }
+			  },
+			  {
+			    left: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/de69b5a9-cec9-48f6-ad4b-831a93e9ce8c.jpg",
+			      desc: "friday night dinner at mcdonalds we are so lucky cuz we got suga and jimin from bts happy meal."
+			    },
+			    right: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/5280c244-6a6d-4332-9bf5-8614e39b3bab.jpg",
+			      desc: "another date sat afternoon."
+			    }
+			  },
+			  {
+			    left: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/9909130d-d998-4cfb-bf1f-7f0f527e5b9e.jpg",
+			      desc: "sunday afternoon karooke me and my couasin."
+			    },
+			    right: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/b4f7f966-f5de-4443-a304-3c46903c6d91.jpg",
+			      desc: "lunch at tokyo tokyo resto."
+			    }
+			  },
+			  {
+			    left: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/afbc1577-3fd8-4b76-984b-4fba46512f1b.jpg",
+			      desc: "matcha cravings friday night date with cousin."
+			    },
+			    right: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/ced4c3d1-8ce1-4534-bcfc-5960ba561af3.jpg",
+			      desc: "Cinammon Bun (˶˃⤙˂˶) ."
+			    }
+			  },
+			  {
+			    left: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/b9144ed8-ef08-416f-822a-dc620c1e45c2.jpg",
+			      desc: "starbucks pastries and breads."
+			    },
+			    right: {
+			      src: "https://luckyleafartstudio.nekoweb.org/photoalbum/9c0889ac-bd68-4e1b-832c-71ccdbbb314f.jpg",
+			      desc: "new make up brands local in ph that i wanna try soo bad and their quality is toptier its the best."
+			    }
+			  }
+			];
+
+			let currentPage = 0;
+			const leftPhoto = document.getElementById("left-photo");
+			const rightPhoto = document.getElementById("right-photo");
+			const leftDesc = document.getElementById("left-desc");
+			const rightDesc = document.getElementById("right-desc");
+			const pgLeft = document.getElementById("pg-left");
+			const pgRight = document.getElementById("pg-right");
+			const lightbox = document.getElementById("lightbox");
+			const lightboxImg = document.getElementById("lightbox-img");
+			const lightboxDesc = document.getElementById("lightbox-desc");
+			const closeBtn = document.querySelector(".close");
+
+			function updatePage() {
+			  leftPhoto.src = photos[currentPage].left.src;
+			  rightPhoto.src = photos[currentPage].right.src;
+			  leftDesc.textContent = photos[currentPage].left.desc;
+			  rightDesc.textContent = photos[currentPage].right.desc;
+			  pgLeft.textContent = `Pg ${currentPage * 2 + 1}`;
+			  pgRight.textContent = `Pg ${currentPage * 2 + 2}`;
+			}
+
+			function openLightbox(src, desc) {
+			  lightbox.style.display = "block";
+			  lightboxImg.src = src;
+			  lightboxDesc.textContent = desc;
+			}
+
+			function closeLightbox() {
+			  lightbox.style.display = "none";
+			}
+
+			// Click handlers for photos
+			leftPhoto.onclick = function() {
+			  openLightbox(photos[currentPage].left.src, photos[currentPage].left.desc);
+			};
+
+			rightPhoto.onclick = function() {
+			  openLightbox(photos[currentPage].right.src, photos[currentPage].right.desc);
+			};
+
+			// Close lightbox
+			closeBtn.onclick = closeLightbox;
+
+			lightbox.onclick = function(e) {
+			  if (e.target === lightbox) {
+			    closeLightbox();
+			  }
+			};
+
+			// Keyboard support
+			document.addEventListener('keydown', function(e) {
+			  if (lightbox.style.display === "block" && e.key === "Escape") {
+			    closeLightbox();
+			  }
+			});
+
+			// Navigation buttons
+			document.getElementById("next").onclick = function() {
+			  if (currentPage < photos.length - 1) {
+			    currentPage++;
+			    updatePage();
+			  }
+			};
+
+			document.getElementById("prev").onclick = function() {
+			  if (currentPage > 0) {
+			    currentPage--;
+			    updatePage();
+			  }
+			};
+
+			updatePage();
+		</script>
+	</body>
+</html>

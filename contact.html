@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>✮🎀🍀𝓬𝓸𝓷𝓽𝓪𝓬𝓽🍀🎀✮</title>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://luckyleafartstudio.nekoweb.org/img/bow.png"
+		/>
+		<script src="https://beta.iframe.chat/scripts/main.min.js"></script>
+		<script>
+			function openMain(mainName) {
+			    var i;
+			    var x = document.getElementsByClassName("main");
+			    for (i = 0; i < x.length; i++) {
+			        x[i].style.display = "none";
+			    }
+			    document.getElementById(mainName).style.display = "block";
+			}
+		</script>
+		<style>
+				@font-face {
+				  font-family: 'kindergarten';
+				  src: url('fonts/kindergarten.ttf') format('truetype');
+				}
+
+				@font-face {
+				     font-family: 'Autumn Crush';
+				     src: url('fonts/Autumn Crush.ttf') format('truetype');
+				}
+
+					* {
+						margin: 0;
+						padding: 0;
+						box-sizing: border-box;
+						cursor: url('https://luckyleafartstudio.nekoweb.org/img/Cursor%20(1).png'), auto;
+					}
+
+					/* For clickable elements */
+					a, button, .button, .player iframe, .chat-window, [role="button"], input[type="submit"], input[type="button"] {
+						cursor: url('https://luckyleafartstudio.nekoweb.org/img/cursor%20(2).png'), pointer !important;
+					}
+
+				body {
+				  font-family: 'kindergarten';
+				  background: url('https://i.pinimg.com/736x/a3/61/84/a3618463752d4efd9bf1386dbe0ede68.jpg');
+				  background-position: repeat;
+				  min-height: 100vh;
+				  padding: 20px;
+
+				}
+
+				.container {
+				  max-width: 1200px;
+				  margin: 0 auto;
+				}
+
+				/* Header */
+				.header {
+				  background-image: url('https://i.pinimg.com/736x/75/49/bf/7549bfaf960ab68ae05faed63033573b.jpg');
+				  border-radius: 20px;
+				  padding: 15px 30px;
+				  display: flex;
+				  justify-content: space-between;
+				  align-items: center;
+				  margin-bottom: 20px;
+				  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+				}
+
+				.back-button img {
+				  width: 120px;
+				  height: 80px;
+				  border-radius: 15px;
+				  object-fit: cover;
+				}
+
+				.navigation {
+				  display: flex;
+				  gap: 40px;
+				}
+
+				.nav-link {
+				  font-family: 'kindergarten';
+				  color: #1C352D;
+				  text-decoration: none;
+				  font-size: 32px;
+				  font-style: italic;
+				  transition: color .3s;
+				}
+				.nav-link:hover { color: #C6D870; }
+
+				/* Main Content */
+				.main-content {
+				  background: url('https://i.pinimg.com/736x/75/49/bf/7549bfaf960ab68ae05faed63033573b.jpg');
+				  background-position: background-repeat;
+				  background-size: 100vh 50vh;
+				  border-radius: 20px;
+				  padding: 20px;
+				  margin-bottom: 50px;
+				  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+				}
+
+				.content-row {
+				  display: flex;
+				  flex-wrap: wrap;
+				  gap: 20px;
+				}
+
+				/* Board Left */
+				.board1 {
+				  background: url('https://i.pinimg.com/1200x/ca/73/48/ca73488c7ece14793442b671c8d3332e.jpg') no-repeat center/cover;
+				  border-radius: 15px;
+				  padding: 30px 15px;
+				  width: 280px;
+				  min-height: 500px;
+				}
+
+				/*right board*/
+				.board3 {
+				  background: url('https://i.pinimg.com/1200x/ca/73/48/ca73488c7ece14793442b671c8d3332e.jpg') no-repeat center/cover;
+				  border-radius: 15px;
+				  padding: 30px 15px;
+				  width: 300px;
+				  min-height: 500px;
+				}
+
+				/* Midle Board */
+				.large-board {
+				  flex: 1;
+				}
+
+				.board-pattern {
+				  background: url('https://i.pinimg.com/1200x/ca/73/48/ca73488c7ece14793442b671c8d3332e.jpg');
+				  background-position: center;
+				  background-size: 35rem 35rem;
+				  border-radius: 20px;
+				  padding: 20px;
+				  margin-top: 10px;
+				  min-height: 700px;
+				  display: flex;
+				  flex-direction: column;
+				  align-items: center;       /* center horizontally */
+				}
+
+				.heading1 {
+				  font-family: 'Autumn Crush';
+				  font-size: 50px;
+				  font-weight: bold;
+				  color: #740938;
+				  margin-top: 1rem;
+				  text-align: center;
+				}
+
+				.paragraph {
+					font-size: 1.5rem;
+					margin: 0rem;
+					padding: 0rem;
+					letter-spacing: 0rem;
+					text-align: justify;
+					font-family: 'kindergarten', Sans-Serif;
+					font-display: bold;
+					color: black ;
+				}
+
+
+				/* Footer */
+				.footer {
+				  text-align: center;
+				  font-size: 18px;
+				  font-style: italic;
+				  color: rgb(175, 23, 64);
+				}
+
+				/* Responsive */
+				@media (max-width: 900px) {
+				  .content-row { flex-direction: column; }
+				  .board1 { width: 100%; }
+				  .meme img { width: 100%; max-width: 250px; margin: 0 auto; }
+				  .col { flex-direction: column; align-items: center; }
+				}
+
+				/* Styled chat window container */
+				.chat-window {
+				  background: rgba(255, 255, 255, 0.9);
+				  border-radius: 12px;
+				  padding: 10px;
+				  margin-top: 15px;
+				  border: 3px solid #740938;
+				  box-shadow: 0 4px 8px rgba(0,0,0,0.2), inset 0 2px 4px rgb(116, 9, 56);
+				  overflow: hidden;
+				  font-family: 'kindergarten', Sans-Serif;
+				}
+
+				.chat-window iframe {
+				  border: none;
+				  border-radius: 8px;
+				  display: block;
+				}
+
+				.chattable {
+					background-image: url('https://i.pinimg.com/736x/9d/d2/e4/9dd2e45da571c91f623f7c1e0628aede.jpg');
+				}
+
+				#top_banner {
+				  display: none !important;
+				}
+
+				:root {
+				  --advanced-layout: true;
+				}
+
+				.h2-chatbox {
+				  font-weight: bold;
+				  font-family: 'Autumn Crush';
+				  text-align: center;
+				  color: #740938;
+				  font-size: 28px;
+				  text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+				}
+
+				.update-log {
+				  font-weight: bold;
+				  font-family: 'Autumn Crush';
+				  text-align: center;
+				  color: #740938;
+				  font-size: 28px;
+				  margin-bottom: 2rem;
+				  text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+				}
+
+				.scroller {
+				  width: 280px;
+				  height: 280px;
+				  overflow-y: scroll;
+				  scrollbar-color:  #556B2F #EFF5D2 ;
+				  padding: 10px;
+				  margin-top: 9px;
+				}
+
+				.scroller1 {
+				  width: 465px;
+				  height: 465px;
+				  overflow-y: scroll;
+				  overflow-x: hidden;
+				  scrollbar-color:  #AF3E3E #EFF5D2 ;
+				  padding: 10px;
+				  margin-top: 15px;
+				}
+
+				/* Time display styling */
+				.time-container {
+				  background: rgba(255, 255, 255, 0.8);
+				  border-radius: 10px;
+				  padding: 8px;
+				  margin-top: 15px;
+				  border: 2px solid #740938;
+				  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+				}
+
+				/* Cute home button */
+				.home-btn {
+				  position: absolute;
+				  bottom: 10px;
+				  left: 50%;
+				  transform: translateX(-50%);
+				  width: 50px;
+				  height: 50px;
+				  background: #7fb069;
+				  border-radius: 50%;
+				  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+				}
+
+				/*mood*/
+				.mood {
+					overflow: visible !important;
+				}
+
+				/*Player iframe - FIXED*/
+				.player-container {
+					background-image: url('https://i.pinimg.com/1200x/ca/73/48/ca73488c7ece14793442b671c8d3332e.jpg');
+					background-size: cover;
+					width: 100%;
+					height: auto;
+					border-radius: 1rem;
+				}
+
+				.play {
+				  margin-top: 1rem;
+				  font-weight: bold;
+				  font-family: 'Autumn Crush';
+				  text-align: center;
+				  color: #740938;
+				  font-size: 28px;
+				  text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+				}
+
+				.Player {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 110%;
+					margin-top: 10px;
+					margin-bottom: 1rem;
+
+				}
+
+				.Player iframe {
+					  height: 250px;
+					  width: 350px;
+					align-items: center;
+					border: none;
+					border-radius: 10px;
+					background-color: transparent;
+					display: block;
+				}
+
+				.h2-mood {
+				  padding: 1rem;
+				  margin-bottom: 0.5rem;
+				  font-weight: bold;
+				  font-family: 'Autumn Crush';
+				  text-align: center;
+				  color: #740938;
+				  font-size: 28px;
+				  text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+				}
+
+							/* Menu button */
+				.button {
+				  align-self: center;
+				  background-color: #fff;
+				  background-position: 0 90%;
+				  background-repeat: repeat no-repeat;
+				  background-size: 4px 3px;
+				  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+				  border-style: solid;
+				  border-width: 2px;
+				  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+				  box-sizing: border-box;
+				  color: #2d4a2d;
+				  cursor: pointer;
+				  margin-top: 10px;
+				  display: block;
+				  font-family: 'kindergarten', Sans-Serif;
+				  font-weight: bold;
+				  font-size: 1.5rem;
+				  line-height: 23px;
+				  outline: none;
+				  margin: 1rem auto;
+				  padding: 20px 50px;
+				  text-decoration: none;
+				  transition: all 235ms ease-in-out;
+				  border-bottom-left-radius: 15px 255px;
+				  border-bottom-right-radius: 225px 15px;
+				  border-top-left-radius: 255px 15px;
+				  border-top-right-radius: 15px 225px;
+				  user-select: none;
+				  -webkit-user-select: none;
+				  touch-action: manipulation;
+				  width: 90%;
+				}
+
+				.button:hover {
+				  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+				  transform: translate3d(0, 2px, 0);
+				}
+
+				.button:focus {
+				  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+				}
+
+					.buttons {
+					  align-self: center;
+					  background-color: #fff;
+					  background-position: 0 90%;
+					  background-repeat: repeat no-repeat;
+					  background-size: 4px 3px;
+					  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+					  border-style: solid;
+					  border-width: 2px;
+					  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+					  box-sizing: border-box;
+					  color: #740938;
+					  cursor: pointer;
+					  margin-top: 10px;
+					  display: block;
+					  font-family: kindergarten, Sans-Serif;
+					  font-weight: bold;
+					  font-size: 1.5rem;
+					  line-height: 23px;
+					  outline: none;
+					  margin: 1rem auto;
+					  padding: .75rem;
+					  text-decoration: none;
+					  transition: all 235ms ease-in-out;
+					  border-bottom-left-radius: 15px 255px;
+					  border-bottom-right-radius: 225px 15px;
+					  border-top-left-radius: 255px 15px;
+					  border-top-right-radius: 15px 225px;
+					  user-select: none;
+					  -webkit-user-select: none;
+					  touch-action: manipulation;
+					  width: 90%;
+					}
+
+					.buttons:hover {
+					  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+					  transform: translate3d(0, 2px, 0);
+					}
+
+					.buttons:focus {
+					  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+					}
+
+				#statuscafe {
+				    padding: .5em;
+				    background-image: url('https://i.pinimg.com/736x/15/47/aa/1547aa362fccb2670e1ba29145b89272.jpg');
+				    background-position: no-repeat;
+				    background-size: cover;
+				    border: 1px solid #740938;
+					padding-top: 2rem;
+				}
+				#statuscafe-username {
+				    margin-bottom: .4em;
+				    margin-left: 1rem;
+				}
+				#statuscafe-content {
+				    margin: 0 1em 0.5em 1em;
+				    text-align: center;
+				}
+
+				/*grid container in contact.html*/
+				.grid-container {
+				  display: grid;
+				  grid-template-columns: auto auto;
+				  grid-gap: 2px;
+				  padding: 1px;
+				  display: flex;
+				}
+
+				.grid-container > div {
+				  background-color: rgba(255, 255, 255, 0.8);
+				  text-align: center;
+				  padding: 20px 0;
+				  font-size: 15px;
+				}
+
+				.item1 {
+				  grid-column: 1 / span 2;
+				}
+				.item1 img {
+					width: 10rem;
+					height: auto;
+				}
+				.item2 {
+				  grid-column: 1 / span 2;
+				}
+				.item2-h3 {
+				  font-size: 30px;
+				  font-weight: bold;
+				  font-family: 'Autumn Crush';
+				  text-align: center;
+				  color: rgb(116, 9, 56);
+				  text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+				}
+				.item2-p {
+					margin: 0.1rem;
+					padding: 0.1rem;
+					letter-spacing: 0.1rem;
+					text-align: justify;
+					font-family: 'kindergarten', Sans-Serif;
+					font-display: bold;
+					color: black ;
+				}
+
+
+				.meow img {
+					border-radius: 1rem;
+					  position: absolute;
+					  top: 905px;
+					  z-index: 5;
+					  width: 34rem;
+					  height: 220px;
+				}
+
+				.links {
+					background-image: url('https://i.pinimg.com/1200x/7d/be/ed/7dbeed787e6a26974ecc0cbe0ae5c7b4.jpg');
+					background-size: cover;
+					background-position: center;
+					border-radius: 1rem;
+					padding: 1rem;
+					margin-top: 1rem;
+					width: 100%;
+					height: auto;
+
+				}
+				.links h2 {
+					text-align: center;
+					font-family:'Autumn Crush' ;
+					color: #1C352D;
+				  font-size: 28px;
+				  word-spacing: 1rem;
+				}
+
+				.center {
+				  margin: auto;
+				  padding-left: 1rem;
+
+				}
+
+				.hotlinking h2 {
+					text-align: center;
+					font-family:'Autumn Crush' ;
+					color: #1C352D;
+				  font-size: 28px;
+				  word-spacing: 0.1rem;
+				  padding-top: 1rem;
+				  padding-bottom: 1rem;
+				}
+
+				.centerlink {
+				  position: center;
+				  margin: auto;
+				  padding-left: 1rem;
+				  padding-right: 1rem;
+
+				}
+				.buttoncode {
+					max-width: 150px;
+					font-size: 10px;
+					padding-left: 1rem;
+				}
+				.buttoncode a {
+					font-size: 10px;
+				}
+				.centerline {
+				display: flex;
+				}
+
+				.highlight {
+					background-color: #AF3E3E;
+				    width: 100%;
+				    max-width: 450px;
+				    height: auto;
+				    margin: 20px auto;
+				    padding: 20px;
+				    border: 3px solid #c6ac9b;
+				    border-radius: 10px;
+				    font-size: 26px;
+				    font-family: 'Autumn Crush';
+				    color: #EAEBD0;
+				    text-align: center;
+				    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+				}
+
+			/*	.highlight img {
+					width: 30px;
+					height: 30px;
+					vertical-align: middle;
+					margin: 0 10px;
+				}*/
+
+				.guestbook-container {
+					width: 100%;
+					margin-top: 20px;
+				}
+
+				.guestbook-container iframe {
+					border: 3px solid #EAEBD0;
+					border-radius: 10px;
+					box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+				}
+
+				/* Hotlinking section styling */
+				.hotlinking-section {
+					background-image: url('https://i.pinimg.com/1200x/7d/be/ed/7dbeed787e6a26974ecc0cbe0ae5c7b4.jpg');
+					background-size: cover;
+					background-position: center;
+					border-radius: 1rem;
+					padding: 1rem;
+					margin-top: 1rem;
+					width: 100%;
+				}
+
+				.hotlinking-section h2 {
+					text-align: center;
+					font-family:'Autumn Crush' ;
+					color: rgb(116, 9, 56);
+					font-size: 28px;
+					word-spacing: 0.1rem;
+					margin-bottom: 1rem;
+				}
+
+				.hotlink-content {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					gap: 1rem;
+				}
+
+				.hotlink-image {
+					flex: 1;
+					display: flex;
+					justify-content: center;
+				}
+
+				.hotlink-image img {
+					max-width: 100%;
+					height: auto;
+					border-radius: 5px;
+				}
+
+				.hotlink-code {
+					flex: 1;
+				}
+
+				.hotlink-code textarea {
+					width: 100%;
+					height: 80px;
+					border-radius: 5px;
+					border: 1px solid #7fb069;
+					padding: 5px;
+					font-family: monospace;
+					font-size: 10px;
+					resize: none;
+					background-color: rgba(255, 255, 255, 0.9);
+				}
+
+				/* Links section styling */
+				.links-section {
+					background-image: url('https://i.pinimg.com/1200x/7d/be/ed/7dbeed787e6a26974ecc0cbe0ae5c7b4.jpg');
+					background-size: cover;
+					background-position: center;
+					border-radius: 1rem;
+					padding: 1rem;
+					margin-top: 1rem;
+					width: 100%;
+				}
+
+				.links-section h2 {
+					text-align: center;
+					font-family:'Autumn Crush' ;
+					color: rgb(116, 9, 56);
+					font-size: 28px;
+					word-spacing: 1rem;
+					margin-bottom: 1rem;
+				}
+
+				.links-grid {
+					display: grid;
+					grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+					gap: 10px;
+					justify-items: center;
+				}
+
+				.links-grid a {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				.links-grid img {
+					max-width: 100%;
+					height: auto;
+					border-radius: 5px;
+					transition: transform 0.3s ease;
+				}
+
+				.links-grid img:hover {
+					transform: scale(1.05);
+				}
+
+				/*ko-fi*/
+				.ko-fi {
+					margin: 1rem;
+					padding: 1rem;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Header -->
+			<header class="header">
+				<div class="back-button">
+					<a href="index.html">
+						<img
+							src="https://luckyleafartstudio.nekoweb.org/img/img.cat-section.jpg"
+							alt="Back"
+						/>
+					</a>
+				</div>
+				<nav class="navigation">
+					<button class="button">
+						<a href="home.html" class="nav-link">Home</a>
+					</button>
+					<button class="button">
+						<a href="about.html" class="nav-link">About</a>
+					</button>
+					<button class="button">
+						<a href="contact.html" class="nav-link">Contact</a>
+					</button>
+				</nav>
+			</header>
+
+			<!-- Main Content -->
+			<main class="main-content">
+				<div class="content-row">
+					<!-- Left Board -->
+					<section class="board1">
+						<h2 class="h2-chatbox">Chatbox</h2>
+						<!-- Styled chat window wrapper -->
+						<div class="chat-window">
+							<iframe
+								src="https://www3.cbox.ws/box/?boxid=3549492&boxtag=YA9vO1"
+								width="100%"
+								height="450"
+								allowtransparency="yes"
+								allow="autoplay"
+								frameborder="0"
+								marginheight="0"
+								marginwidth="0"
+								scrolling="auto"
+							></iframe>
+						</div>
+						<br />
+						<center>
+							<div class="time-container">
+								<iframe
+									src="https://free.timeanddate.com/clock/i9yootua/n196/fn8/fc53382f/tct/pct/ftb"
+									frameborder="0"
+									width="94"
+									height="18"
+									allowtransparency="true"
+								></iframe>
+							</div>
+						</center>
+						<div class="ko-fi">
+							<script
+								type="text/javascript"
+								src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"
+							></script>
+							<center>
+								<script
+									type="text/javascript"
+									src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"
+								></script>
+								<script type="text/javascript">
+									kofiwidget2.init('Support me on Ko-fi', '#9A3F3F', 'I2I11NAGO9');kofiwidget2.draw();
+								</script>
+							</center>
+						</div>
+					</section>
+
+					<!-- middle Board -->
+					<section class="large-board">
+						<div class="board-pattern">
+							<h1 class="heading1">Contacts</h1>
+							<div class="scroller1">
+								<div class="grid-container">
+									<div class="item1">
+										<img
+											src="https://luckyleafartstudio.nekoweb.org/img/telepono.png"
+										/>
+									</div>
+									<div class="item2">
+										<h3 class="item2-h3">
+											let's have a chit-chat
+										</h3>
+										<br />
+										<p class="item2-p">
+											<b>email:</b>
+											luckyleafartstudio@disroot.org
+											<br />
+											<b>spacehey:</b>
+											<a
+												href="https://spacehey.com/luckyme"
+											>
+												send msg!
+											</a>
+											<br />
+											<b>Guestbook:</b>
+											<a
+												href="https://luckyleafartstudio.atabook.org/"
+											>
+												send msg!
+											</a>
+										</p>
+									</div>
+								</div>
+								<p class="paragraph">
+									Let's connect! For private messages or
+									feedback, email me. For a casual chat, find
+									me on SpaceHey, use the Cbox here, or
+									<b>
+										<a
+											href="https://luckyleafartstudio.atabook.org/"
+										>
+											sign my guestbook.
+										</a>
+									</b>
+									I look forward to hearing from you.
+								</p>
+
+								<!-- Hotlinking section moved to middle board -->
+								<div class="hotlinking-section">
+									<h2>
+										Feel Free to Link Me!
+										<br />
+										⸜(｡˃ ᵕ ˂ )⸝♡
+									</h2>
+									<div class="hotlink-content">
+										<div class="hotlink-image">
+											<a
+												href="https://luckyleafartstudio.nekoweb.org/"
+												target="_blank"
+											>
+												<img
+													src="https://luckyleafartstudio.nekoweb.org/assets/LuckyLeaf.jpg"
+												/>
+											</a>
+										</div>
+										<div class="hotlink-code">
+											<textarea readonly="">
+<a href="https://luckyleafartstudio.nekoweb.org/" target="_blank">
+<img src="https://luckyleafartstudio.nekoweb.org/assets/LuckyLeaf.jpg"/></a></textarea
+											>
+										</div>
+									</div>
+								</div>
+
+								<!-- Links section -->
+								<div class="links-section">
+									<h2>Cool Websites ( ˘͈ ᵕ ˘͈♡)</h2>
+									<div class="links-grid">
+										<a
+											target="_blank"
+											href="https://littleabyss.nekoweb.org/"
+										>
+											<img
+												src="https://littleabyss.nekoweb.org/assets/littleabyss.gif"
+												alt="littleabyss.nekoweb.org"
+											/>
+										</a>
+										<a
+											target="_blank"
+											href="https://nyscyra.nekoweb.org/"
+										>
+											<img
+												src="https://nyscyra.nekoweb.org/img/button.png"
+											/>
+										</a>
+										<a
+											href="https://merisumu.nekoweb.org/"
+											target="_blank"
+										>
+											<img
+												src="https://merisumu.nekoweb.org/img/kissaten.gif"
+												alt="merisumu"
+											/>
+										</a>
+
+										<a
+											target="_blank"
+											href="https://sorbecci.art/chinatown/"
+										>
+											<img
+												src="https://sorbecci.art/chinatown/button.gif"
+												alt="https://sorbecci.art/chinatown/"
+											/>
+										</a>
+										<a
+											href="https://pinksmores.nekoweb.org/"
+											target="_blank"
+										>
+											<img
+												src="https://pinksmores.nekoweb.org/images/pinksmores_button.GIF"
+											/>
+										</a>
+										<a
+											href="https://razzpixel.nekoweb.org/"
+											target="_blank"
+										>
+											<img
+												src="https://razzpixel.nekoweb.org/img/link/nekoweb-link.gif"
+											/>
+										</a>
+										<a
+											href="https://nicrinu.moe/"
+											target="_blank"
+										>
+											<img
+												src="https://nicrinu.moe/button.gif"
+												alt="button"
+											/>
+										</a>
+										<a href="https://kiwiwi.nekoweb.org">
+											<img
+												src="https://kiwiwi.nekoweb.org/kiwiwibutton.png"
+											/>
+										</a>
+										<a href="https://grani.nekoweb.org">
+											<img
+												src="https://grani.nekoweb.org/grani.gif"
+											/>
+										</a>
+										<a
+											href="https://nyani58.nekoweb.org/"
+											target="_blank"
+										>
+											<img
+												src="https://files.catbox.moe/k4kbag.gif"
+											/>
+										</a>
+										<a
+											href="https://cloverbell.neocities.org/"
+											target="blank"
+										>
+											<img
+												src="https://cloverbell.neocities.org/n_n/cloverbell.gif"
+											/>
+										</a>
+										<a
+											href="https://scriabyne.nekoweb.org/"
+										>
+											<img
+												src="https://scriabyne.nekoweb.org/button.png"
+											/>
+										</a>
+
+										<a href="https://pokopon.nekoweb.org/">
+											<img
+												src="https://pokopon.nekoweb.org/images/button3.gif"
+												alt="pokopon"
+											/>
+										</a>
+										<a
+											href="https://aobingfeet.pics"
+											target="_blank"
+										>
+											<img
+												src="https://aobingfeet.pics/imgs/imp/button.png"
+											/>
+										</a>
+										<a href="https://puddingpudd.com">
+											<img
+												src="https://puddingpudd.com/buttons/Pudd_Button.gif"
+												width="88"
+												height="31"
+											/>
+										</a>
+										<a
+											href="https://slowslushie.nekoweb.org/"
+										>
+											<img
+												src="https://file.garden/aKM6cgV5eixaX8Eq/button.png"
+												alt=""
+											/>
+										</a>
+										<a
+											href="https://minntibunni.nekoweb.org"
+										>
+											<img
+												src="https://minntibunni.nekoweb.org/assets/images/site/mintbunnies-link.gif"
+												alt="mintbunnies neighbourhood"
+												title="✧˖° mintbunnies neighbourhood ✧˖°"
+											/>
+										</a>
+										<a
+											href="https://rice.place/"
+											target="_blank"
+										>
+											<img
+												src="https://rice.nekoweb.org/button/riceus.gif"
+											/>
+										</a>
+										<a
+											href="https://cloverbell.neocities.org/"
+											target="blank"
+										>
+											<img
+												src="https://cloverbell.neocities.org/n_n/cloverbell.gif"
+											/>
+										</a>
+										<a
+											href="https://fishgills-nds.neocities.org/"
+										>
+											<img
+												src="https://fishgills-nds.neocities.org//images/mybutton.gif"
+												width="88px"
+											/>
+										</a>
+										<a
+											href="https://nursehell.nekoweb.org/"
+											target="_blank"
+										>
+											<img
+												src="https://nursehell.nekoweb.org/button.gif"
+												alt="NURSEHELL"
+											/>
+										</a>
+										<a href="https://harriet.nekoweb.org/">
+											<img
+												src="https://file.garden/aAUxCxm2KRQR_inV/hatties-button.gif"
+												alt="Button for Hattie's House"
+												title="Harriet's Webpage!"
+											/>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="player-container">
+							<h2 class="play">Play Music!</h2>
+							<div class="Player">
+								<iframe
+									src="vinyl_player.html"
+									title="Vinyl Music Player"
+									allowTransparency="true"
+									align-items="center"
+								></iframe>
+							</div>
+						</div>
+					</section>
+
+					<!--right board-->
+					<section class="board3">
+						<h2 class="update-log">Update Log</h2>
+						<div class="scroller">
+							<p>
+								<b>December 27, 2025</b>
+								<br />
+								&#9733;newww entry on my websiteee homepage!
+							</p>
+							<br />
+							<p>
+								<b>November 11, 2025</b>
+								<br />
+								&#9733;Replacing new design in ABOUT PAGE and
+								adding PhotoAlbum page in homepage navigation
+								menu...
+							</p>
+							<br />
+							<p>
+								<b>November 07, 2025</b>
+								<br />
+								&#9733;Replacing new design in CONTACT PAGE and
+								rearange vinyl music player Hotlinking and cool
+								Websites link...
+							</p>
+							<br />
+							<p>
+								<b>November 05, 2025</b>
+								<br />
+								&#9733;Mini PhotoAlbum is underconstruction, and
+								status.cafe update new post...
+							</p>
+							<br />
+							<p>
+								<b>November 03, 2025</b>
+								<br />
+								&#9733;NEW ART UPDATE IN THE HOMEPAGE AND
+								STATUS.CAFE/MOOD !!
+								<br />
+								ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
+							</p>
+							<br />
+							<p>
+								<b>October 29, 2025</b>
+								<br />
+								&#9733;NEW BLOG UPDATE IN THE HOMEPAGE AND
+								STATUS.CAFE/MOOD !!
+								<br />
+								ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
+							</p>
+							<br />
+							<p>
+								<b>October 24, 2025</b>
+								<br />
+								&#9733;Adding ko-fi button, updating status.cafe
+								post and adding neighbourhood Hotlinking.
+							</p>
+							<br />
+							<p>
+								<b>October 18, 2025</b>
+								<br />
+								&#9733;I already changed the cat image on the
+								homepage, homepage into new art and instead a
+								heading 2 of "New Art"—I made it into buttons so
+								you can clicked directly to my art gallery, and
+								I added 2 buttons, its games log and library
+								buttons on the about page. Also, I change the
+								page of the art gallery instead of Notion page,
+								I change it to something else.
+							</p>
+							<br />
+							<p>
+								<b>October 15, 2025</b>
+								<br />
+								&#9733;Updating contact links and applying
+								Guestbook inside the contacts page..
+							</p>
+							<br />
+							<p>
+								<b>October 14, 2025</b>
+								<br />
+								&#9733;Adding Game Log button and page..
+							</p>
+							<br />
+							<p>
+								<b>October 13, 2025</b>
+								<br />
+								&#9733;Adding Hotlinking & my neighbourhoods in
+								contact page
+							</p>
+							<br />
+							<p>
+								<b>October 09, 2025</b>
+								<br />
+								&#9733; changing music player into Vinyl music
+								player.
+							</p>
+							<br />
+							<p>
+								<b>October 08, 2025</b>
+								<br />
+								&#9733; Adding the music player, mood status to
+								the contact site, updating the middle-container,
+								applying contacts to send msg of email, spacehey
+								and Guestbook, and others is still processing...
+							</p>
+							<br />
+							<p>
+								<b>October 07, 2025</b>
+								<br />
+								&#9733; I change the navigation menu to a
+								button. And also I change the background of each
+								page (ㅅ´ ˘ `)｡...
+							</p>
+							<br />
+							<p>
+								<b>October 06, 2025</b>
+								<br />
+								&#9733; my eyes is hurting cuz of a screen and
+								im lacking of creativity ( ;´ - `;). im too
+								excited to finish this and i need to change the
+								design looks to plain ಥ‿ಥ .its hard when ur in a
+								procrastoination state ｡°(°¯᷄◠¯᷅°)°｡...
+							</p>
+						</div>
+						<div>
+							<button
+								class="buttons"
+								onclick="window.location.href='https://status.cafe/users/luckyleaf1'"
+							>
+								Status.cafe
+							</button>
+							<div class="mood">
+								<div id="statuscafe">
+									<div id="statuscafe-username"></div>
+									<div id="statuscafe-content"></div>
+								</div>
+								<script
+									src="https://status.cafe/current-status.js?name=luckyleaf1"
+									defer
+								></script>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+
+			<!-- Footer -->
+			<footer class="footer">
+				<p><b>2025 Copyright ©LuckyLeafArtStudio</b></p>
+			</footer>
+		</div>
+	</body>
+</html>

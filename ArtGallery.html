@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>✮🎀🍀𝓐𝓻𝓽𝓖𝓪𝓵𝓵𝓮𝓻𝔂🎀✮</title>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://luckyleafartstudio.nekoweb.org/img/bow.png"
+		/>
+		<style>
+			@font-face {
+			  font-family: 'kindergarten';
+			  src: url('fonts/kindergarten.ttf') format('truetype');
+			}
+
+			@font-face {
+			  font-family: 'Autumn Crush';
+			  src: url('fonts/Autumn Crush.ttf') format('truetype');
+			}
+
+			* {
+			  margin: 0;
+			  padding: 0;
+			  box-sizing: border-box;
+			}
+
+			body {
+			  font-family: 'kindergarten';
+			  height: 100vh;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  flex-direction: column;
+			  overflow: hidden;
+			  background-image: url('https://i.pinimg.com/1200x/47/c1/01/47c1016c287ef103b01c3f72dcc4ed65.jpg');
+			  /*background-position: repeat-x repeat-y;
+			  background-size: 1200px;*/
+			  cursor: url('https://luckyleafartstudio.nekoweb.org/img/Cursor%20(1).png'), auto;
+			}
+
+			/* For clickable elements */
+			a, button, .button, [role="button"], input[type="submit"], input[type="button"] {
+				cursor: url('https://luckyleafartstudio.nekoweb.org/img/cursor%20(2).png'), pointer !important;
+			}
+
+			.journal-wrapper {
+			  position: relative;
+			  perspective: 2000px;
+			  transform: scale(0.85);
+			}
+
+			.notebook {
+			  width: 656px;
+			  height: 726px;
+			  position: relative;
+			  transform-style: preserve-3d;
+			  transition: transform 1s ease;
+			  font-size: 2rem;
+			}
+
+			.page {
+			  width: 100%;
+			  height: 100%;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  background-size: cover;
+			  background-position: center;
+			  border-radius: 10px;
+			  transform-origin: left;
+			  backface-visibility: hidden;
+			  transition: transform 0.9s ease;
+			}
+
+			.page.flipped {
+			  transform: rotateY(-150deg);
+			}
+
+			.page-content {
+			  width: 100%;
+			  height: 100%;
+			  display: flex;
+			  flex-direction: column;
+			  justify-content: flex-start;
+			  align-items: center;
+			  color: #2d3a1f;
+			  padding: 40px 30px;
+			  font-size: 1.3rem;
+			  line-height: 1.8;
+			  background: transparent;
+			  border-radius: 10px;
+			  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+			  overflow-y: auto;
+			}
+
+			.page-content h2 {
+			  font-family: 'Autumn Crush';
+			  font-size: 4rem;
+			  margin-top: 5rem;
+			  margin-bottom: 1rem;
+			  background: rgba(255, 255, 255, 0.85);
+			  padding: 6px 16px;
+			  border-radius: 8px;
+			}
+
+			.page-content h3 {
+			  font-family: 'Autumn Crush';
+			  margin-top: 10px;
+			  margin-bottom: 15px;
+			  background: rgba(255, 255, 255, 0.85);
+			  padding: 8px 20px;
+			  border-radius: 6px;
+			  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			  font-size: 1.8rem;
+			}
+
+			.page-content p {
+			  font-family: 'kindergarten';
+			  background: #ffff;
+			  padding: 8px 16px;
+			  border-radius: 6px;
+			  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			  margin-top: 5px;
+			  margin-bottom: 15px;
+			  text-align: center;
+			  max-width: 500px;
+			}
+
+			.page-content a {
+			  background: #ffff;
+			  padding: 10px 16px;
+			  border-radius: 6px;
+			  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			  margin-top: 10rem;
+			  text-align: center;
+			}
+
+			.gallery-grid {
+			  display: grid;
+			  grid-template-columns: repeat(2, 1fr);
+			  gap: 15px;
+			  width: 100%;
+			  max-width: 550px;
+			  background: transparent;
+			  margin-bottom: 10px;
+			}
+
+			.gallery-item {
+			  position: relative;
+			  cursor: pointer;
+			  border-radius: 8px;
+			  overflow: hidden;
+			  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+			  transition: transform 0.3s, box-shadow 0.3s;
+			  background: transparent;
+			}
+
+			.gallery-item:hover {
+			  transform: scale(1.05);
+			  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+			}
+
+			.gallery-item img {
+			  width: 100%;
+			  height: 200px;
+			  object-fit: cover;
+			  display: block;
+			  background: transparent;
+			}
+
+			.gallery-item-overlay {
+			  position: absolute;
+			  bottom: 0;
+			  left: 0;
+			  right: 0;
+			  background: rgba(0, 0, 0, 0.7);
+			  color: white;
+			  padding: 8px;
+			  font-size: 0.9rem;
+			  text-align: center;
+			  opacity: 0;
+			  transition: opacity 0.3s;
+			}
+
+			.gallery-item:hover .gallery-item-overlay {
+			  opacity: 1;
+			}
+
+			/* Lightbox Modal */
+			.lightbox {
+			  display: none;
+			  position: fixed;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 100%;
+			  background: rgba(0, 0, 0, 0.9);
+			  z-index: 9999;
+			  justify-content: center;
+			  align-items: center;
+			}
+
+			.lightbox.active {
+			  display: flex;
+			}
+
+			.lightbox-content {
+			  position: relative;
+			  max-width: 90%;
+			  max-height: 90%;
+			  background: white;
+			  border-radius: 10px;
+			  padding: 20px;
+			  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+			}
+
+			.lightbox-content img {
+			  max-width: 100%;
+			  max-height: 70vh;
+			  border-radius: 8px;
+			  display: block;
+			  margin: 0 auto;
+			  background: transparent;
+			}
+
+			.lightbox-description {
+			  margin-top: 15px;
+			  text-align: center;
+			  font-size: 1.2rem;
+			  color: #333;
+			  background: transparent;
+			}
+
+			.lightbox-close {
+			  position: absolute;
+			  top: 10px;
+			  right: 15px;
+			  font-size: 2rem;
+			  color: #333;
+			  cursor: pointer;
+			  background: transparent;
+			  border: none;
+			  font-weight: bold;
+			}
+
+			.lightbox-close:hover {
+			  color: #666;
+			}
+
+			.lightbox-nav {
+			  position: absolute;
+			  top: 50%;
+			  transform: translateY(-50%);
+			  background: rgba(255, 255, 255, 0.8);
+			  border: none;
+			  font-size: 2rem;
+			  padding: 10px 15px;
+			  cursor: pointer;
+			  border-radius: 5px;
+			  transition: 0.3s;
+			}
+
+			.lightbox-nav:hover {
+			  background: rgba(255, 255, 255, 1);
+			}
+
+			.lightbox-prev {
+			  left: 20px;
+			}
+
+			.lightbox-next {
+			  right: 20px;
+			}
+
+			.navigation {
+			  font-family: 'kindergarten';
+			  margin-top: 25px;
+			  display: flex;
+			  justify-content: space-between;
+			  align-items: center;
+			  width: 656px;
+			}
+
+			button {
+			  background-image: url('https://i.pinimg.com/736x/de/d3/47/ded347bfbc840d1ff289cac73f528172.jpg');
+			  background-position: repeat;
+			  border: none;
+			  color: #6b8e5f;
+			  padding: 12px 24px;
+			  border-radius: 8px;
+			  font-family: 'kindergarten';
+			  font-size: 1.1rem;
+			  cursor: pointer;
+			  transition: 0.3s;
+			}
+
+			button:hover:not(:disabled) {
+			  background: #EFF5D2;
+			  transform: translateY(-2px);
+			}
+
+			button:disabled {
+			  opacity: 0.4;
+			  cursor: not-allowed;
+			}
+
+			.page-indicator {
+			  font-family: 'kindergarten';
+			  background-image: url('https://i.pinimg.com/736x/de/d3/47/ded347bfbc840d1ff289cac73f528172.jpg');
+			  color: #626F47;
+			  font-weight: bold;
+			  font-size: 2rem;
+			}
+
+			.notebook::before {
+			  content: '';
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 10px;
+			  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+			  z-index: -1;
+			}
+
+			/* Back Button Styles */
+			.cat2 {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				z-index: 10000;
+				transition: opacity 0.3s ease;
+			}
+
+			.cat2.hidden {
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			.cat2 img {
+				padding-left: 1px;
+				margin: 9px;
+				width: 250px;
+				height: auto;
+				transition: transform 0.3s ease;
+			}
+
+			.cat2 img:hover {
+				animation: jelly 0.5s;
+			}
+
+			@keyframes jelly {
+				from, to { transform: scale(1, 1); }
+				25% { transform: scale(0.9, 1.1); }
+				50% { transform: scale(1.1, 0.9); }
+				75% { transform: scale(0.95, 1.05); }
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- Back Button -->
+		<div class="cat2" id="backButton">
+			<a href="home.html">
+				<img
+					src="https://luckyleafartstudio.nekoweb.org/img/back_to_home.png"
+					alt="Back Button"
+				/>
+			</a>
+		</div>
+		<div class="journal-wrapper">
+			<div class="notebook" id="notebook">
+				<!-- Pages dynamically generated -->
+			</div>
+
+			<div class="navigation">
+				<button id="prevBtn">← Prev</button>
+				<div class="page-indicator">
+					Page
+					<span id="currentPage">1</span>
+					/
+					<span id="totalPages">11</span>
+				</div>
+				<button id="nextBtn">Next →</button>
+			</div>
+		</div>
+
+		<!-- Lightbox Modal -->
+		<div class="lightbox" id="lightbox">
+			<div class="lightbox-content">
+				<button class="lightbox-close" id="lightboxClose">×</button>
+				<button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+					‹
+				</button>
+				<img
+					id="lightboxImg"
+					src="https://i.pinimg.com/736x/a3/47/1a/a3471a52f82bc640f9a90a45d8d4df0d.jpg"
+					alt=""
+				/>
+				<div class="lightbox-description" id="lightboxDesc"></div>
+				<button class="lightbox-nav lightbox-next" id="lightboxNext">
+					›
+				</button>
+			</div>
+		</div>
+
+		<script>
+			const pageImages = [
+			  "https://luckyleafartstudio.nekoweb.org/img/frontcover1.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/1.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/2.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/1.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/2.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/1.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/2.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/1.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/2.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/1.png",
+			  "https://luckyleafartstudio.nekoweb.org/img/2.png"
+			];
+			// Gallery data for each page
+			const pageContent = [
+			  // Page 0 - Cover
+			  {
+			    type: 'cover',
+			    html: `<h2>ArtGallery</h2><a>By LuckyLeafArtStudio</a>`
+			  },
+			  // Page 1 - Warning Page
+			  {
+			    type: 'cover',
+			    html: `
+			      <h3>⚠️ Important Notice ⚠️</h3>
+			      <p style="font-size: 1.2rem; line-height: 2; max-width: 550px;">Hello, Web Wonderers! 🌸</p>
+			      <p style="font-size: 1.1rem; line-height: 2; max-width: 550px;">Everything you see here is my original art. These artworks are my personal creations and cherished memories. Each piece holds a special story from my life and experiences.</p>
+			      <p style="font-size: 1.1rem; line-height: 2; max-width: 550px;">All works are protected by copyright. If you attempt to steal or copy my artwork, you will face consequences. As an artist, I despise those who try to steal or copy my creations. My art is the result of hard work, patience, and many hours of practice.</p>
+			      <p style="font-size: 1.1rem; line-height: 2; max-width: 550px;">Please do not reproduce, distribute, or use without my permission.</p>
+			      <p style="font-size: 1.2rem; line-height: 2; max-width: 550px;">Thank you for respecting my creative work and journey! ✨💕</p>
+			    `
+			  },
+			  // Page 2 - Forest Whispers Gallery
+			  {
+			    type: 'gallery',
+			    title: 'Urban Sketch Paintings',
+			    description: 'Traditional Paintings',
+				images: [{
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/tambayan.png',
+			        desc: 'This is were i or my friends almost spend our time after class in college when me and friends nowhere to go'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/image%20(7).png',
+			        desc: 'After examination we decided to go Intramuros and we take a lot of pictures, talking while walking and we ate lunch.'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/image%20(1).png',
+			        desc: 'i saw pictures on pinterest i used that as practice urban sketch for reference, ive practice a lot that time hehe'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/image%20(6).png',
+			        desc: 'After caffe Intramuros we roam around and saw this beautiful, like a dementional door to the other world but its not it was like a magical door (ᵕ—ᴗ—), i took a picture and paint it, turns out beautiful (˶˃ ᵕ ˂˶)'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/image%20(2).png',
+			        desc: 'I used charcoal pencil 5b and 8b. this is the time were titas came home and eat outside the resturant is beautiful tho and its the style of resto near to my home is like a bahay kubo in philippines and i can see the moonlight outside of the window'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/image%20(4).png',
+			        desc: 'again i saw this around Intramuros'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/image%20(9).png',
+			        desc: 'this is a street im trying to draw perspective'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/img.png',
+			        desc: 'i didnt finish the other half i was supposed to draw a bridge (╥﹏╥)'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/home.jpg',
+			        desc: 'my old home'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/isawitthistooanduseditasreference.png',
+			        desc: 'i have reference photo from pinterest'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/isawthisonpinterestasreference.png',
+			        desc: 'i have reference photo from pinterest so i can practice outside with my friends at the cafe'
+			      }
+			    ]
+			  },
+			  // Page 3 - Wildflower Dreams Gallery
+			  {
+			    type: 'gallery',
+			    title: 'Urban Sketch Paintings',
+			    description: 'Digital Paintings',
+			    images: [{
+						url: 'https://luckyleafartstudio.nekoweb.org/arts/64201cc3-a110-47a1-8bdf-e20c65110608.jpg',
+			        desc: 'this is my 1st time trying digital urban Sketch using ibis paint x, im drawing cruh house and he loves it'
+			      },
+			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/old_home.jpg',
+			        desc: 'his is my 2nd time Urban Sketch my old home, i have this old home in Traditional art and this is the ver2 in digital using ibis paint x and the brushes i saw on pinterest is good'
+			      },
+			      			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/manila_coffe_intramuros_ver2.jpg',
+			        desc: '3rd try and it turns out beautiful (ㅅ´ ˘ `) i got bored hehe'
+			      },
+			      			      			      {
+			        url: 'https://luckyleafartstudio.nekoweb.org/arts/yakiyaki_resto.jpeg',
+			        desc: 'yaki yaki resto near in manila Intramuros (ㅅ´ ˘ `)'
+			      }
+			    ]
+			  },
+			  // Page 4 - Mountain Peace Gallery
+			  {
+			    type: 'gallery',
+			    title: 'Mountain Peace',
+			    description: 'Find stillness at the top of the world',
+			    images: [{
+			        url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+			        desc: 'Majestic snow-capped peaks'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800',
+			        desc: 'Alpine lake reflection'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800',
+			        desc: 'Mountain ridge at sunset'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800',
+			        desc: 'Clouds below mountain summit'
+			      }
+			    ]
+			  },
+			  // Page 5 - Ocean Waves Gallery
+			  {
+			    type: 'gallery',
+			    title: 'Ocean Waves',
+			    description: 'Let the rhythm of water calm your soul',
+			    images: [{
+			        url: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800',
+			        desc: 'Rolling waves at sunset'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800',
+			        desc: 'Crystal clear turquoise water'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800',
+			        desc: 'Dramatic ocean storm'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1484821582734-6c6c9f99a672?w=800',
+			        desc: 'Peaceful beach morning'
+			      }
+			    ]
+			  },
+			  // Page 6 - Sunset Glow Gallery
+			  {
+			    type: 'gallery',
+			    title: 'Sunset Glow',
+			    description: 'Every ending holds a new beginning',
+			    images: [{
+			        url: 'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=800',
+			        desc: 'Vibrant orange and pink sky'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1506815444479-bfdb1e96c566?w=800',
+			        desc: 'Silhouette against sunset'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1500099817043-86d46000d58f?w=800',
+			        desc: 'Golden hour over water'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800',
+			        desc: 'Last rays of daylight'
+			      }
+			    ]
+			  },
+			  // Page 7 - Autumn Colors Gallery
+			  {
+			    type: 'gallery',
+			    title: 'Autumn Colors',
+			    description: 'Change is beautiful and necessary',
+			    images: [{
+			        url: 'https://images.unsplash.com/photo-1476820865390-c52aeebb9891?w=800',
+			        desc: 'Golden fall foliage'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1507371341162-763b5e419408?w=800',
+			        desc: 'Red and orange leaves'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1445346366695-5bf62de05412?w=800',
+			        desc: 'Autumn forest path'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1504198266287-1659872e6590?w=800',
+			        desc: 'Fall colors reflection'
+			      }
+			    ]
+			  },
+			  // Page 8 - Winter Wonder Gallery
+			  {
+			    type: 'gallery',
+			    title: 'Winter Wonder',
+			    description: 'Rest and renewal in the quiet season',
+			    images: [{
+			        url: 'https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=800',
+			        desc: 'Fresh snowfall on trees'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1478827217976-56ce1b3647c4?w=800',
+			        desc: 'Frozen winter landscape'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=800',
+			        desc: 'Icy mountain peak'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=800',
+			        desc: 'Snow-covered forest'
+			      }
+			    ]
+			  },
+			  // Page 9 - Spring Awakening Gallery
+			  {
+			    type: 'gallery',
+			    title: 'Spring Awakening',
+			    description: 'New life bursts forth with hope',
+			    images: [{
+			        url: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800',
+			        desc: 'Cherry blossoms in bloom'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800',
+			        desc: 'Fresh green meadow'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800',
+			        desc: 'Spring flowers emerging'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800',
+			        desc: 'Vibrant spring landscape'
+			      }
+			    ]
+			  },
+			  // Page 10 - Starry Night Gallery
+			  {
+			    type: 'gallery',
+			    title: 'Starry Night',
+			    description: 'Dream under the infinite sky ✨',
+			    images: [{
+			        url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800',
+			        desc: 'Milky Way over mountains'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800',
+			        desc: 'Star trails in night sky'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1444927714506-8492d94b4e3d?w=800',
+			        desc: 'Constellation patterns'
+			      },
+			      {
+			        url: 'https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=800',
+			        desc: 'Northern lights dancing'
+			      }
+			    ]
+			  }
+			];
+			const totalPages = pageImages.length;
+			const notebook = document.getElementById("notebook");
+			const currentPageDisplay = document.getElementById("currentPage");
+			const totalPageDisplay = document.getElementById("totalPages");
+			const prevBtn = document.getElementById("prevBtn");
+			const nextBtn = document.getElementById("nextBtn");
+			const backButton = document.getElementById("backButton");
+			// Lightbox elements
+			const lightbox = document.getElementById("lightbox");
+			const lightboxImg = document.getElementById("lightboxImg");
+			const lightboxDesc = document.getElementById("lightboxDesc");
+			const lightboxClose = document.getElementById("lightboxClose");
+			const lightboxPrev = document.getElementById("lightboxPrev");
+			const lightboxNext = document.getElementById("lightboxNext");
+			let currentLightboxImages = [];
+			let currentLightboxIndex = 0;
+			totalPageDisplay.textContent = totalPages;
+			// Create pages dynamically
+			pageImages.forEach((img, index) => {
+			  const page = document.createElement("div");
+			  page.classList.add("page");
+			  page.style.backgroundImage = `url('${img}')`;
+			  const content = document.createElement("div");
+			  content.classList.add("page-content");
+			  const pageData = pageContent[index];
+			  if (pageData.type === 'cover') {
+			    content.innerHTML = pageData.html;
+			  } else if (pageData.type === 'gallery') {
+			    content.innerHTML = `
+			      <h3>${pageData.title}</h3>
+			      <p>${pageData.description}</p>
+			      <div class="gallery-grid" data-page="${index}">
+			        ${pageData.images.map((imgData, imgIndex) => `
+			          <div class="gallery-item" data-page="${index}" data-index="${imgIndex}">
+			            <img src="${imgData.url}" alt="${imgData.desc}">
+			            <div class="gallery-item-overlay">${imgData.desc}</div>
+			          </div>
+			        `).join('')}
+			      </div>
+			    `;
+			  }
+			  page.appendChild(content);
+			  notebook.appendChild(page);
+			});
+			const pages = document.querySelectorAll(".page");
+			let currentPage = 0;
+			// Gallery item click handlers
+			document.addEventListener('click', (e) => {
+			  const galleryItem = e.target.closest('.gallery-item');
+			  if (galleryItem) {
+			    const pageIndex = parseInt(galleryItem.dataset.page);
+			    const imgIndex = parseInt(galleryItem.dataset.index);
+			    openLightbox(pageIndex, imgIndex);
+			  }
+			});
+
+			function openLightbox(pageIndex, imgIndex) {
+			  const pageData = pageContent[pageIndex];
+			  currentLightboxImages = pageData.images;
+			  currentLightboxIndex = imgIndex;
+			  updateLightbox();
+			  lightbox.classList.add('active');
+			  backButton.classList.add('hidden');
+			}
+
+			function updateLightbox() {
+			  const imgData = currentLightboxImages[currentLightboxIndex];
+			  lightboxImg.src = imgData.url;
+			  lightboxDesc.textContent = imgData.desc;
+			}
+			lightboxClose.addEventListener('click', () => {
+			  lightbox.classList.remove('active');
+			  backButton.classList.remove('hidden');
+			});
+			lightboxPrev.addEventListener('click', () => {
+			  currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
+			  updateLightbox();
+			});
+			lightboxNext.addEventListener('click', () => {
+			  currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
+			  updateLightbox();
+			});
+			lightbox.addEventListener('click', (e) => {
+			  if (e.target === lightbox) {
+			    lightbox.classList.remove('active');
+			    backButton.classList.remove('hidden');
+			  }
+			});
+			// Keyboard navigation for lightbox
+			document.addEventListener('keydown', (e) => {
+			  if (lightbox.classList.contains('active')) {
+			    if (e.key === 'ArrowLeft') lightboxPrev.click();
+			    if (e.key === 'ArrowRight') lightboxNext.click();
+			    if (e.key === 'Escape') {
+					lightboxClose.click();
+					backButton.classList.remove('hidden');
+				}
+			  } else {
+			    if (e.key === 'ArrowRight') nextBtn.click();
+			    if (e.key === 'ArrowLeft') prevBtn.click();
+			  }
+			});
+
+			function updateView() {
+			  currentPageDisplay.textContent = currentPage + 1;
+			  pages.forEach((page, i) => {
+			    if (i < currentPage) {
+			      page.classList.add("flipped");
+			      page.style.zIndex = totalPages - i;
+			    } else {
+			      page.classList.remove("flipped");
+			      page.style.zIndex = totalPages - i;
+			    }
+			  });
+			  prevBtn.disabled = currentPage === 0;
+			  nextBtn.disabled = currentPage === totalPages - 1;
+			}
+			nextBtn.addEventListener("click", () => {
+			  if (currentPage < totalPages - 1) {
+			    currentPage++;
+			    updateView();
+			  }
+			});
+			prevBtn.addEventListener("click", () => {
+			  if (currentPage > 0) {
+			    currentPage--;
+			    updateView();
+			  }
+			});
+			updateView();
+		</script>
+		<script>
+			document.querySelector(".cat2 img").addEventListener("mousemove", e => {
+				const cat = e.target;
+				const rect = cat.getBoundingClientRect();
+				const x = (e.clientX - rect.left) / rect.width - 0.5;
+				const y = (e.clientY - rect.top) / rect.height - 0.5;
+				cat.style.transform = `scale(1.1) translate(${x * 15}px, ${y * 15}px)`;
+			});
+
+			document.querySelector(".cat2 img").addEventListener("mouseleave", e => {
+				e.target.style.transform = "scale(1)";
+			});
+		</script>
+	</body>
+</html>

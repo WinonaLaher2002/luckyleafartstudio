@@ -1,0 +1,354 @@
+<html>
+	<head>
+		<title>Player</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			href="https://luckyleafartstudio.nekoweb.org/img/__%C3%97%C2%82__%C3%A0%C2%B3%C2%80_%C3%B0%C2%9D%C2%97%C2%89%C3%8D%C2%9C%C3%B0%C2%9D%C2%97%C2%88%C3%8D%C2%9C%C3%B0%C2%9D%C2%97%C2%8C%C3%8D%C2%9C%C3%B0%C2%9D%C2%97%C2%8D-removebg-preview.png"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		/>
+		<style>
+
+						@font-face {
+			  font-family: 'kindergarten';
+			  src: url('fonts/kindergarten.ttf') format('truetype');
+			}
+
+			@font-face {
+			     font-family: 'Autumn Crush';
+			     src: url('fonts/Autumn Crush.ttf') format('truetype');
+			}
+			      body {
+			  font-family: 'kindergarten';
+			        color:#a2c1e5;
+			        display: flex;
+			        font-size: 11px;
+			         }
+
+			        .Player1 {
+			            height: 195px;
+			            width: 14rem;
+			            border-radius: 4px;
+			            background-size: 40%;
+			        }
+
+			        .player {
+			            height: 150px;
+			            width: 250px;
+			            display: flex;
+			            align-items: center;
+			            flex-direction: column;
+			            justify-content: center;
+			            padding: 5px;
+			            border-radius: 10px;
+			            background: url(https://i.pinimg.com/736x/ae/f7/5f/aef75f4d0663500be2207f202eeb3efe.jpg);
+			            background-size: cover;
+			            background-position: center;
+			        }
+
+			        .tophalf {
+			        	margin-left: 1rem;
+			            width: 100%;
+			            height: 8rem;
+			            display: flex;
+			            align-items: center;
+			        }
+
+			        .art {
+			            margin: 0px;
+			            height: 6.6rem;
+			            width: 7.3rem;
+			            background-size: 100%;
+			            border-radius: 5%;
+			            transition: ease-out 0.9s;
+			        }
+
+			        .details {
+			            width: 7rem;
+			            height: 8.1rem;
+			            text-align: center;
+			            display: flex;
+			            flex-direction: column;
+			            justify-content: center;
+			            align-items: center;
+			        }
+
+			        .topdetails {
+			        	margin-top: 2rem;
+			            width: 100%;
+			            height: 5.1rem;
+			            text-align: center;
+			            padding-left: 3px;
+			        }
+
+			        .name {
+			        	font-family: 'kindergarten';
+			            font-size: 15px;
+			            color: rgb(85, 107, 47);
+			        }
+
+			        .artist {
+			        	font-family: 'kindergarten';
+			            font-size: 1.05rem;
+			            color: rgb(143, 163, 30);
+			        }
+
+			        .now-playing {
+			        	font-family: 'Autumn Crush';
+			            font-size: 0.8rem;
+			            color: rgb(85, 107, 47);
+
+			        }
+
+			        .buttons {
+			        	margin-bottom: 1rem;
+			            display: flex;
+			            align-items: center;
+			            color: rgb(85, 107, 47);
+			            gap: 5px;
+			            font-size: 100%;
+			        }
+
+			        .playpause-track,
+			        .prev,
+			        .next {
+			            transition: ease 0.2s;
+			        }
+
+			        .playpause-track:hover,
+			        .prev:hover,
+			        .next:hover {
+			            opacity: 0.5;
+			        }
+
+			        .bottomhalf {
+			            width: 100%;
+			            height: 3.5rem;
+			            display: flex;
+			            flex-direction: column;
+			            align-items: center;
+			        }
+
+			        .slider_container {
+			            width: 105%;
+			            max-width: 400px;
+			            display: flex;
+			            justify-content: center;
+			            align-items: center;
+			            height: 1.3rem;
+			            color: rgb(85, 107, 47);
+			        }
+
+			        .seek_slider {
+			            -webkit-appearance: none;
+			            -moz-appearance: none;
+			            appearance: none;
+			            height: 5px;
+			            background: rgb(85, 107, 47);
+			            opacity: 0.88;
+			            transition: opacity .2s;
+			            border-radius: 3px;
+			        }
+
+			        .seek_slider::-webkit-slider-thumb {
+			            -webkit-appearance: none;
+			            -moz-appearance: none;
+			            appearance: none;
+			            width: 15px;
+			            height: 15px;
+			            background: rgb(255, 255, 255);
+			            border-radius: 50%;
+			            box-shadow: inset 7px 0 7px -7px #5ecbd1, inset -7px 0 7px -7px#9feae1, inset 0 -7px 7px -7px #5ecbd1;
+			        }
+
+			        .seek_slider:hover {
+			            opacity: 1.0;
+			        }
+
+			        .seek_slider {
+			            width: 60%;
+			        }
+
+			        .current-time,
+			        .dur {
+			            padding: 10px;
+			        }
+
+			        .fa-5x {
+			            font-size: 1.9em;
+			        }
+
+			        .fa-2x {
+			            font-size: 1.8em;
+			        }
+		</style>
+	</head>
+
+	<body>
+		<div class="Player1">
+			<div class="player">
+				<div class="tophalf">
+					<div
+						class="art"
+						style="background-image: url(filler);"
+					></div>
+					<div class="details">
+						<div class="topdetails">
+							<div class="name">filler</div>
+							<div class="artist">filler</div>
+							<div class="now-playing">PLAYING 1 OF 4</div>
+						</div>
+						<div class="buttons">
+							<div class="prev" onclick="preV()">
+								<i class="fa fa-step-backward fa-2x"></i>
+							</div>
+							<div class="playpause-track" onclick="playoff()">
+								<i class="fa fa-play-circle fa-5x"></i>
+							</div>
+							<div class="next" onclick="next()">
+								<i class="fa fa-step-forward fa-2x"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottomhalf">
+					<div class="slider_container">
+						<div class="current-time">00:02</div>
+						<input
+							type="range"
+							min="1"
+							max="100"
+							value="0"
+							class="seek_slider"
+							onchange="seekTo()"
+						/>
+						<div class="dur">03:22</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			let now_playing = document.querySelector(".now-playing");
+			let track_art = document.querySelector(".art");
+			let track_name = document.querySelector(".name");
+			let track_artist = document.querySelector(".artist");
+			let playpause_btn = document.querySelector(".playpause-track");
+			let next_btn = document.querySelector(".next");
+			let prev_btn = document.querySelector(".prev");
+			let seek_slider = document.querySelector(".seek_slider");
+			let curr_time = document.querySelector(".current-time");
+			let total_duration = document.querySelector(".dur");
+			let playlist = 0;
+			let isPlaying = false;
+			let updateTimer;
+			let curr_track = document.createElement('audio');
+			let track_list = [
+			    {
+			        name: "date",
+			        artist: "frad",
+			        image: "https://luckyleafartstudio.nekoweb.org/img/img1.jpg",
+			        path: "https://luckyleafartstudio.nekoweb.org/song/frad%20-%20first%20date.mp3"
+			    },
+			    {
+			        name: "Blue",
+			        artist: "Yung kai",
+			        image: "https://luckyleafartstudio.nekoweb.org/img/meow.png",
+			        path: "https://luckyleafartstudio.nekoweb.org/song/blue%20(instrumental).mp3"
+			    },
+			    {
+			        name: "Wave to earth",
+			        artist: "love.",
+			        image: "https://i.pinimg.com/736x/0d/c4/cf/0dc4cfc1575cd31a611b6e25a45cdff4.jpg",
+			        path: "https://luckyleafartstudio.nekoweb.org/song/wave%20to%20earth%20-%20love.%20(Official%20Lyric%20Video).mp3",
+			    },
+			    {
+			        name: "supernatural",
+			        artist: "Ariana Grande",
+			        image: "https://i.pinimg.com/736x/e2/20/65/e220652fe742b63da3e27573ddc3bb85.jpg",
+			        path: "https://luckyleafartstudio.nekoweb.org/song/Ariana%20Grande%20-%20supernatural%20(lyric%20visualizer).mp3"
+			    },
+			];
+
+			function loadTrack(playlist) {
+			    clearInterval(updateTimer);
+			    resetValues();
+			    curr_track.src = track_list[playlist].path;
+			    curr_track.load();
+			    track_art.style.backgroundImage = "url(" + track_list[playlist].image + ")";
+			    track_name.textContent = track_list[playlist].name;
+			    track_artist.textContent = track_list[playlist].artist;
+			    now_playing.textContent = "PLAYING " + (playlist + 1) + " OF " + track_list.length;
+			    updateTimer = setInterval(seekUpdate, 1000);
+			    curr_track.addEventListener("ended", next);
+			}
+
+			function resetValues() {
+			    curr_time.textContent = "00:00";
+			    total_duration.textContent = "00:00";
+			    seek_slider.value = 0;
+			}
+
+			loadTrack(playlist);
+
+			function playoff() {
+			    if (!isPlaying) on();
+			    else off();
+			}
+
+			function on() {
+			    curr_track.play();
+			    isPlaying = true;
+			    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+			}
+
+			function off() {
+			    curr_track.pause();
+			    isPlaying = false;
+			    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+			}
+
+			function next() {
+			    if (playlist < track_list.length - 1)
+			        playlist += 1;
+			    else playlist = 0;
+			    loadTrack(playlist);
+			    on();
+			}
+
+			function preV() {
+			    if (playlist > 0)
+			        playlist -= 1;
+			    else playlist = track_list.length - 1;
+			    loadTrack(playlist);
+			    on();
+			}
+
+			function seekTo() {
+			    let seekto = curr_track.duration * (seek_slider.value / 100);
+			    curr_track.currentTime = seekto;
+			}
+
+			function seekUpdate() {
+			    let seekPosition = 0;
+			    if (!isNaN(curr_track.duration)) {
+			        seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+			        seek_slider.value = seekPosition;
+			        let currentMinutes = Math.floor(curr_track.currentTime / 60);
+			        let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+			        let durationMinutes = Math.floor(curr_track.duration / 60);
+			        let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+			        if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+			        if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+			        if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+			        if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+			        curr_time.textContent = currentMinutes + ":" + currentSeconds;
+			        total_duration.textContent = durationMinutes + ":" + durationSeconds;
+			    }
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>✮🎀🍀𝓪𝓫𝓸𝓾𝓽🍀🎀✮</title>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://luckyleafartstudio.nekoweb.org/img/bow.png"
+		/>
+		<style>
+				@font-face {
+				  font-family: 'kindergarten';
+				  src: url('fonts/kindergarten.ttf') format('truetype');
+				}
+
+				@font-face {
+				     font-family: 'Autumn Crush';
+				     src: url('fonts/Autumn Crush.ttf') format('truetype');
+				}
+
+				* {
+					margin: 0;
+					padding: 0;
+					box-sizing: border-box;
+					cursor: url('https://luckyleafartstudio.nekoweb.org/img/Cursor%20(1).png'), auto;
+				}
+
+				/* For clickable elements */
+				a, button, .button, [role="button"], input[type="submit"], input[type="button"] {
+					cursor: url('https://luckyleafartstudio.nekoweb.org/img/cursor%20(2).png'), pointer !important;
+				}
+
+				body {
+				  font-family: 'kindergarten';
+				  color: rgb(108, 78, 49);
+				  background: url('https://i.pinimg.com/736x/a2/be/74/a2be7496e1557ea6b2cf185f4f21c355.jpg');
+				  background-repeat: repeat;
+				  background-position: center;
+				  background-size: 250px;
+				  min-height: 100vh;
+				  padding: 20px;
+				}
+
+				.container {
+				  max-width: 1200px;
+				  margin: 0 auto;
+				}
+
+				/* Header */
+				.header {
+				  background-image: url('https://i.pinimg.com/1200x/d9/a8/13/d9a8134f550fcb6ecf6cbd22c78d73cb.jpg');
+				  border-radius: 20px;
+				  padding: 15px 30px;
+				  display: flex;
+				  justify-content: space-between;
+				  align-items: center;
+				  margin-bottom: 20px;
+				  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				}
+
+				.back-button img {
+				  width: 120px;
+				  height: 80px;
+				  border-radius: 15px;
+				  object-fit: cover;
+				}
+
+				.navigation {
+				  display: flex;
+				  gap: 40px;
+				}
+
+				.nav-link {
+				  font-family: 'kindergarten';
+				  color: rgb(108, 78, 49);
+				  text-decoration: none;
+				  font-size: 32px;
+				  font-style: italic;
+				  transition: color .3s;
+				}
+				.nav-link:hover { color: #C6D870; }
+
+				/* Main Content - UPDATED */
+				.main-content {
+				  background: url('https://i.pinimg.com/1200x/d9/a8/13/d9a8134f550fcb6ecf6cbd22c78d73cb.jpg');
+				  background-repeat: no-repeat;
+				  background-position: center;
+				  background-size: cover;
+				  border-radius: 20px;
+				  padding: 20px;
+				  margin-bottom: 50px;
+				  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				  position: relative;
+				}
+				/*Update*/
+				.content-row {
+				  display: flex;
+				  align-items: flex-start;
+				  gap: 10px; /* smaller gap between board1 and large-board */
+				  margin-bottom: 20px;
+				}
+
+				.button-section {
+				  flex: 1;
+				  max-width: 320px; /* slightly smaller for closer fit */
+				  margin-left: 10px; /* optional fine-tuning */
+				  position: relative;
+				}
+
+				.board1 {
+				  background-image: url('https://i.pinimg.com/736x/d4/7e/17/d47e176e0dc988dff82116650df62fb2.jpg');
+				  background-repeat: no-repeat;
+				  background-size: cover;
+				  border-radius: 15px;
+				  padding: 15px; /* reduced padding */
+				  width: 280px; /* slightly smaller width */
+				  height: 680px; /* reduced height */
+				  position: relative;
+				  display: flex;
+				  flex-direction: column;
+				  justify-content: space-around; /* more balanced spacing */
+				  align-items: center; /* centers buttons horizontally */
+				}
+
+
+				/* Board backgrounds */
+
+				.board2 {
+				  background-size: 100% 500%; /* Changed to fill container */
+				  background-repeat: no-repeat;
+				  border-radius: 15px;
+				  padding: 20px;
+				  height: auto; /* Changed from 600% */
+				  min-height: 500px; /* Minimum height */
+				  width: 100%; /* Ensure full width of container */
+				}
+
+				/* Board Pattern - FIXED */
+				.board-pattern {
+				  background-image: url('https://i.pinimg.com/736x/55/7b/a7/557ba7d7bb0b944632e30b35f2574961.jpg');
+				  background-size: cover;
+				  background-repeat: no-repeat;
+				  border-radius: 30px;
+				  padding: 20px;
+				  min-height: 700px;
+				  width: 100%;
+				  position: relative;
+				  display: flex;
+				  flex-direction: column;
+				}
+
+				/* Board Pattern Content - FIXED */
+				.board-pattern-content {
+				  display: flex;
+				  flex-direction: column;
+				  height: 100%;
+				  position: relative;
+				}
+
+				.board-pattern img {
+				  width: 150px;
+				  height: auto;
+				  border-radius: 10px;
+				  margin: 0 auto 15px;
+				  display: block;
+				}
+
+				.card {
+					border-sizing: border-box;
+				}
+
+				.about-detail h3{
+				   font-size: 2rem;
+				   color: #30542d;
+				}
+
+				.meme img {
+				   width: 180px;
+				   border-radius: 8px;
+				}
+
+				.about-details {
+				   font-size: 1rem;
+				}
+
+				.about-details h3 {
+				   margin-top: 0;
+				   font-weight: bold;
+				}
+
+				/* Resume Sections */
+				.resume-section {
+				  margin-bottom: 20px;
+				  padding: 15px;
+				  background: rgba(255, 255, 255, 0.7);
+				  border-radius: 15px;
+				}
+
+				.resume-title {
+				  font-family: 'Autumn Crush';
+				  font-size: 28px;
+				  color: rgb(96, 63, 38);
+				  margin-bottom: 10px;
+				  border-bottom: 2px dashed #2d4a2d;
+				  padding-bottom: 5px;
+				}
+
+				.resume-item {
+				  margin-bottom: 15px;
+				}
+
+				.resume-item-title {
+				  font-weight: bold;
+				  font-size: 18px;
+				  color: rgb(96, 63, 38);
+				}
+
+				.resume-item-subtitle {
+				  font-style: italic;
+				  color: rgb(96, 63, 38);
+				  margin-bottom: 5px;
+				}
+
+				.resume-skills {
+				  display: flex;
+				  flex-wrap: wrap;
+				  gap: 10px;
+				}
+
+				.skill-tag {
+				  background: #8fae8f;
+				  color: white;
+				  padding: 5px 10px;
+				  border-radius: 15px;
+				  font-size: 14px;
+				}
+
+				/* Button */
+				.link-button {
+				  font-family: 'kindergarten';
+				  font-size: 2rem;
+				  color: rgb(96, 63, 38);
+				  background: #f5f5dc;
+				  border: 3px solid #2d4a2d;
+				  border-radius: 12px;
+				  padding: 10px 20px;
+				  margin-top: 0;
+				  cursor: pointer;
+				  text-shadow: 1px 1px #fff;
+				  transition: all 0.3s ease;
+				}
+				.link-button:hover {
+				  background: #2d4a2d;
+				  color: rgb(96, 63, 38);
+				}
+
+				/* matcha */
+				.matcha {
+				  position: absolute;
+				  top: 840px;
+				  bottom: 0.1px; /* Changed from top positioning */
+				  right: 30px; /* Changed from left positioning */
+				  left: 650px;
+				  z-index: 5;
+				}
+				.matcha img {
+				  width: 300px;
+				  height: auto;
+				}
+
+				/* meowrr */
+				.meowrr {
+				  position: absolute;
+				  bottom: 0.1px; /* Changed from top positioning */
+				  right: 650px; /* Changed from left positioning */
+				  left: 20px;
+				  z-index: 5;
+				}
+				.meowrr img {
+				  width: 150px;
+				  height: auto;
+				}
+
+				/* cat */
+				.cat img {
+				  width: 500px;
+				  height: auto;
+				  border-radius: 50px;
+				}
+
+				/* Sections - FIXED */
+				.button-section {
+				  flex: 1;
+				  max-with: 350px;
+				  position: relative; /* For positioning bow */
+				}
+
+				.large-board {
+				  flex: 2.2; /* slightly wider */
+				  margin-left: -5px; /* gentle overlap for closer look */
+				}
+
+				.heading1 {
+				  font-family: 'Autumn Crush';
+				  font-size: 50px;
+				  font-weight: bold;
+				  color: rgb(96, 63, 38);
+				  margin: 20px;
+				  text-align: center;
+				}
+
+				.intro1 {
+				  font-size: 16px;
+				  font-weight: bold;
+				  color: rgb(96, 63, 38);
+				  padding: 20px;
+				  margin: 0 50px; /* Reduced margins for better text flow */
+				  text-align: justify;
+				}
+
+				/* Typography */
+				.section-title {
+				  font-size: 24px;
+				  font-weight: bold;
+				  color: rgb(96, 63, 38);
+				  margin-top: 20px;
+				  margin-bottom: 15px;
+				  text-align: center;
+				}
+
+				ul {
+				  list-style-type: none; /* Remove default bullet points */
+				  margin: 0;
+				  padding: 0;
+				  display: block; /* Ensures the list takes its own line */
+				}
+
+				.button-list {
+				  list-style: none;
+				  color: rgb(96, 63, 38);
+				  font-size: 16px;
+				  line-height: 1.6;
+				  text-align: left;
+				  margin: 0 auto; /* Center the list */
+				  width: fit-content; /* Fit content width */
+				}
+
+				.button-list li {
+				  margin-bottom: 8px;
+				  position: relative;
+				  padding-left: 20px; /* Space for bullet */
+				  text-align: left; /* Changed from center */
+				}
+
+				.button-list li:before {
+				  content: "•";
+				  position: absolute;
+				  left: 0;
+				  color: rgb(96, 63, 38);
+				  font-weight: bold;
+				}
+
+				/* Menu buttons */
+				.buttons {
+				  align-self: center;
+				  background-color: #fff;
+				  background-position: 0 90%;
+				  background-repeat: repeat no-repeat;
+				  background-size: 4px 3px;
+				  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+				  border-style: solid;
+				  border-width: 2px;
+				  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+				  box-sizing: border-box;
+				  color: rgb(96, 63, 38);
+				  cursor: pointer;
+				  margin-top: 10px;
+				  display: block;
+				  font-family: kindergarten, Sans-Serif;
+				  font-weight: bold;
+				  font-size: 1.5rem;
+				  line-height: 23px;
+				  outline: none;
+				  margin: 1rem auto;
+				  padding: .75rem;
+				  text-decoration: none;
+				  transition: all 235ms ease-in-out;
+				  border-bottom-left-radius: 15px 255px;
+				  border-bottom-right-radius: 225px 15px;
+				  border-top-left-radius: 255px 15px;
+				  border-top-right-radius: 15px 225px;
+				  user-select: none;
+				  -webkit-user-select: none;
+				  touch-action: manipulation;
+				  width: 90%;
+				}
+
+				.buttons:hover {
+				  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+				  transform: translate3d(0, 2px, 0);
+				}
+
+				.buttons:focus {
+				  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+				}
+				.bow {
+				  position: absolute;
+				  top: 0.1px; /* Changed from top positioning */
+				  left: 50px; /* Changed from left positioning */
+				  z-index: 5;
+				  rotate: transform(20deg);
+				}
+				.bow img {
+				  width: 200px; /* Reduced size for better fit */
+				  height: auto;
+				}
+
+				/* Cat2 Container - POSITIONED BELOW CONTENT ROW */
+				.cat2-container {
+				  display: flex;
+				  align-items: center;
+				  justify-content: center;
+				 /* gap: 1rem; */
+				  margin-top: 10px;
+				  padding: 1px;
+				}
+
+				.cat2 {
+				  text-align: center;
+				}
+
+				.cat2 img {
+				  width: 200px;
+				  height: auto;
+				  transition: transform 0.3s ease;
+				}
+
+				.cat2 img:hover {
+				  animation: jelly 0.5s;
+				  transform: scale(1.05);
+				}
+
+				@keyframes jelly {
+				  from, to { transform: scale(1, 1); }
+				  25% { transform: scale(0.9, 1.1); }
+				  50% { transform: scale(1.1, 0.9); }
+				  75% { transform: scale(0.95, 1.05); }
+				}
+
+				/* Thought bubble - POSITIONED RIGHT BESIDE CAT2 */
+				.thought {
+				  position: relative;
+				  background-color: rgb(252, 249, 234);
+				  border: 2px solid rgb(252, 249, 234);
+				  border-radius: 30px;
+				  padding: 15px 25px;
+				  color: rgb(108, 78, 49);
+				  font-size: 15px;
+				  line-height: 1.5;
+				  text-align: center;
+				  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+				  max-width: 260px;
+				  font-style: italic;
+				  animation: floaty 2s ease-in-out infinite;
+				  margin-right: 10px; /* Added space between thought and cat2 */
+				}
+
+				/* Tail of the bubble - POINTING TO THE RIGHT (towards cat2) */
+				.thought:before {
+				  content: "";
+				  position: absolute;
+				  right: -22px; /* Changed from left to right */
+				  top: 40%;
+				  width: 0;
+				  height: 0;
+				  border: 10px solid transparent;
+				  border-left-color: rgb(252, 249, 234); /* Changed from border-right to border-left */
+				}
+
+				.thought:after {
+				  content: "";
+				  position: absolute;
+				  right: -17px; /* Changed from left to right */
+				  top: 40%;
+				  width: 0;
+				  height: 0;
+				  border: 8px solid transparent;
+				  border-left-color: rgb(252, 249, 234); /* Changed from border-right to border-left */
+				}
+
+				/* Gentle floating animation */
+				@keyframes floaty {
+				  0%, 100% { transform: translateY(0); }
+				  50% { transform: translateY(-3px); }
+				}
+
+				/* Gentle floating animation */
+				@keyframes floaty {
+				  0%, 100% { transform: translateY(0); }
+				  50% { transform: translateY(-3px); }
+				}
+
+				/* Footer */
+				.footer {
+				  font-family: 'kindergarten';
+				  text-align: center;
+				  color: rgb(96, 63, 38);
+				  font-size: 20px;
+				  font-style: italic;
+				}
+
+				/* Responsive */
+				@media (max-width: 800px) {
+				  .container { max-width: 800px; padding: 0 10px; }
+				  .header { flex-direction: column; gap: 15px; padding: 20px; }
+				  .navigation { gap: 20px; }
+				  .nav-link { font-size: 24px; }
+				  .content-row { flex-direction: column; }
+				  .button-section,
+				  .matcha { position: relative; top: auto; right: auto; text-align: center; }
+				  .matcha img { width: 150px; }
+				  .bow { position: relative; bottom: auto; right: auto; text-align: center; }
+				  .bow img { width: 100px; }
+				  .cat { position: relative; top: auto; right: auto; text-align: center; }
+				  .cat img { width: 150px; }
+				  .cat2-container {
+					flex-direction: column;
+					gap: 15px;
+					margin-top: 20px;
+				  }
+				}
+
+				@media (max-width: 480px) {
+				  body { padding: 10px; }
+				  .nav-link { font-size: 20px; }
+				  .navigation { gap: 15px; }
+				  .section-title { font-size: 20px; }
+				  .board1, .board2, .board-pattern { padding: 15px; }
+				  .buttons { font-size: 1.2rem; }
+				  .cat2 img { width: 150px; }
+				  .thought { max-width: 200px; padding: 10px 15px; font-size: 13px; }
+				}
+
+			/* Menu button */
+				.button1 {
+				  align-self: center;
+				  background-color: #fff;
+				  background-position: 0 90%;
+				  background-repeat: repeat no-repeat;
+				  background-size: 4px 3px;
+				  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+				  border-style: solid;
+				  border-width: 2px;
+				  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+				  box-sizing: border-box;
+				  color: rgb(96, 63, 38);
+				  cursor: pointer;
+				  margin-top: 10px;
+				  display: block;
+				  font-family: 'kindergarten', Sans-Serif;
+				  font-weight: bold;
+				  font-size: 1.5rem;
+				  line-height: 23px;
+				  outline: none;
+				  margin: 1rem auto;
+				  padding: 20px 50px;
+				  text-decoration: none;
+				  transition: all 235ms ease-in-out;
+				  border-bottom-left-radius: 15px 255px;
+				  border-bottom-right-radius: 225px 15px;
+				  border-top-left-radius: 255px 15px;
+				  border-top-right-radius: 15px 225px;
+				  user-select: none;
+				  -webkit-user-select: none;
+				  touch-action: manipulation;
+				  width: 90%;
+				}
+
+				.button1:hover {
+				  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+				  transform: translate3d(0, 2px, 0);
+				}
+
+				.button1:focus {
+				  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Header -->
+			<header class="header">
+				<div class="back-button">
+					<a href="index.html">
+						<img
+							src="https://luckyleafartstudio.nekoweb.org/img/img.cat-section.jpg"
+							alt="Back"
+							referrerpolicy="no-referrer"
+						/>
+					</a>
+				</div>
+				<nav class="navigation">
+					<button class="button1">
+						<a href="home.html" class="nav-link">Home</a>
+					</button>
+					<button class="button1">
+						<a href="about.html" class="nav-link">About</a>
+					</button>
+					<button class="button1">
+						<a href="contact.html" class="nav-link">Contact</a>
+					</button>
+				</nav>
+			</header>
+
+			<!-- Main Content -->
+			<main class="main-content">
+				<!-- Top Row -->
+				<div class="content-row">
+					<section class="button-section">
+						<div class="board1">
+							<ul class="button-list">
+								<br />
+								<br />
+								<br />
+								<br />
+								<br />
+								<button
+									class="buttons"
+									onclick="window.location.href='https://codepen.io/Lucktleaf'"
+								>
+									Portfolio Selfprojets
+								</button>
+								<button
+									class="buttons"
+									onclick="window.location.href='https://luckyleafartstudio.atabook.org/'"
+								>
+									Guestbooks
+								</button>
+								<button
+									class="buttons"
+									onclick="window.location.href='https://spacehey.com/luckyme'"
+								>
+									Spacehey
+								</button>
+								<button
+									class="buttons"
+									onclick="window.location.href='https://luckyleafartstudio.nekoweb.org/ArtGallery.html'"
+								>
+									Artgallery
+								</button>
+								<button
+									class="buttons"
+									onclick="window.location.href='https://www.notion.so/library-1404f9e4312347009c3567e98a3f0217?source=copy_link'"
+								>
+									Library
+								</button>
+								<button
+									class="buttons"
+									onclick="window.location.href='https://www.notion.so/game-log-825efd6209c84dab9df020886289770b?source=copy_link'"
+								>
+									Game Log
+								</button>
+							</ul>
+						</div>
+						<div class="bow">
+							<img
+								src="https://luckyleafartstudio.nekoweb.org/img/bow.png"
+								alt="bow"
+							/>
+						</div>
+						<!-- Cat2 Container - POSITIONED BELOW CONTENT ROW -->
+						<div class="cat2-container">
+							<div class="thought">
+								<em>Follow me on Nekoweb!</em>
+							</div>
+							<div class="cat2">
+								<a
+									href="https://nekoweb.org/follow/luckyleafartstudio.nekoweb.org"
+								>
+									<img
+										src="https://luckyleafartstudio.nekoweb.org/img/follow_me_on_nekoweb.png"
+										alt="Follow Cat"
+									/>
+								</a>
+							</div>
+						</div>
+					</section>
+
+					<section class="large-board">
+						<div class="board-pattern">
+							<h1 class="heading1">About me</h1>
+							<div class="card">
+								<div class="meme">
+									<img
+										src="https://i.pinimg.com/736x/47/fe/f0/47fef09b5e072de28b79f35d0ef4e9cc.jpg"
+									/>
+								</div>
+
+								<!-- Resume-style sections -->
+								<div class="resume-section">
+									<h2 class="resume-title">
+										Personal Information
+									</h2>
+									<div class="resume-item">
+										<div class="resume-item-title">
+											Win/LuckyLeaf
+										</div>
+										<div class="resume-item-subtitle">
+											Web Developer & Designer
+										</div>
+										<ul>
+											<li>She/Her</li>
+											<li>Filipino</li>
+											<li>23 yrs old</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="resume-section">
+									<h2 class="resume-title">
+										Interests & Personality
+									</h2>
+									<ul>
+										<li>
+											Read, drawing, chores, sleep & eat
+										</li>
+										<li>
+											Not always active in social media
+										</li>
+										<li>
+											Friendly, funny and caring fwend
+										</li>
+										<li>Likes cute things/cat lover</li>
+										<li>Introvert, likes quiet place</li>
+										<li>Likes spooky or scary stuff</li>
+									</ul>
+								</div>
+
+								<div class="resume-section">
+									<h2 class="resume-title">
+										Professional Summary
+									</h2>
+									<p>
+										Hello! I'm a web developer and designer
+										with a passion for creating beautiful,
+										functional websites. My academic journey
+										in Bachelor of Science in Information
+										Technology at Our Lady of Fatima
+										University provided me with a solid
+										bedrock of knowledge in programming,
+										networking, and system analysis.
+										However, it was in web design where I
+										found my true calling—the perfect blend
+										of creativity and technical
+										problem-solving. I specialize in
+										front-end development with HTML, CSS,
+										and JavaScript, and I enjoy using Figma
+										and Pixso to prototype and design
+										user-centric interfaces.
+									</p>
+								</div>
+
+								<div class="matcha">
+									<img
+										src="https://luckyleafartstudio.nekoweb.org/img/matcha.png"
+										alt="matcha"
+									/>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<script>
+					document.querySelector(".cat2 img").addEventListener("mousemove", e => {
+						const cat = e.target;
+						const rect = cat.getBoundingClientRect();
+						const x = (e.clientX - rect.left) / rect.width - 0.5;
+						const y = (e.clientY - rect.top) / rect.height - 0.5;
+						cat.style.transform = `scale(1.1) translate(${x * 15}px, ${y * 15}px)`;
+					});
+
+					document.querySelector(".cat2 img").addEventListener("mouseleave", e => {
+						e.target.style.transform = "scale(1)";
+					});
+				</script>
+			</main>
+			<!-- Footer -->
+			<footer class="footer">
+				<p><b>2025 Copyright ©LuckyLeafArtStudio</b></p>
+			</footer>
+		</div>
+	</body>
+</html>

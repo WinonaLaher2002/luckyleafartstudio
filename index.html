@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>✮🎀🍀𝓶𝔂 𝓹𝓸𝓻𝓽𝓯𝓸𝓵𝓲𝓸 𝓹𝓻𝓸𝓯𝓲𝓵𝓮🍀🎀✮</title>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://luckyleafartstudio.nekoweb.org/img/bow.png "
+		/>
+		<style>
+			/*strartscrn*/
+			 /* Autumn Crush font from dafont.com */
+			 @font-face {
+			     font-family: 'Autumn Crush';
+			     src: url('fonts/Autumn Crush.ttf') format('truetype');
+			     /* or use the exact filename you downloaded */
+			     font-weight: normal;
+			     font-style: normal;
+			 }
+
+			 @font-face {
+			     font-family: 'kindergarten';
+			     src: url('fonts/kindergarten.ttf') format('truetype');
+			 }
+
+				* {
+					margin: 0;
+					padding: 0;
+					box-sizing: border-box;
+					cursor: url('https://luckyleafartstudio.nekoweb.org/img/Cursor%20(1).png'), auto;
+				}
+
+				/* For clickable elements */
+				a, button, .button, [role="button"], input[type="submit"], input[type="button"] {
+					cursor: url('https://luckyleafartstudio.nekoweb.org/img/cursor%20(2).png'), pointer !important;
+				}
+
+
+
+				body {
+				  font-family: 'Autumn Crush';
+				  background-image: url('https://i.pinimg.com/1200x/9f/08/b5/9f08b568d7991bafbf2ee1950ebc47f6.jpg');
+				  background-repeat: repeat;
+				  background-position: center;
+				  background-attachment: fixed;
+				  min-height: 100vh;
+				  display: flex;
+				  flex-direction: column;
+				  justify-content: center;
+				  align-items: center;
+				}
+
+				.container {
+				  width: 1200px;
+				  min-height: 1024px;
+				  margin: 0 auto;
+				  padding: 20px;
+				  background-image: url('https://i.pinimg.com/1200x/45/e9/26/45e926d334bc45ed8f18200aa96e1b33.jpg');
+				  background-repeat: no-repeat;
+				  background-size: 1000px;
+				  background-position: center;
+				  text-align: center;
+				  z-index: 10;
+				  transform: translateY(-30px);
+				  display: flex;
+				  flex-direction: column;
+				  align-items: center;
+				  justify-content: center;
+				}
+
+				h1.title {
+				  font-size: clamp(3rem, 8vw, 6rem);
+				  color: #537D5D;
+				  text-shadow: 0 0 20px rgba(127, 176, 105, 0.3),
+				               2px 2px 0px rgba(127, 176, 105, 0.8),
+				               4px 4px 0px rgba(107, 156, 85, 0.6);
+				  margin-bottom: 2rem;
+				  letter-spacing: 2px;
+				  text-align: center;
+				  width: 100%;
+				}
+
+				.progressBarContainer {
+				  width: 300px;
+				  height: 30px;
+				  background-color: #e0e0e0;
+				  border-radius: 15px;
+				  margin-top: 20px;
+				  overflow: hidden;
+				  border: 2px solid #537D5D;
+				}
+
+				.progressBar {
+				  width: 0%;
+				  height: 100%;
+				  border-radius: 15px;
+				  transition: width 2s linear;
+				  background-image: url("https://i.pinimg.com/736x/d4/c6/ff/d4c6ff8095f8b9facbf6c11946f09dbe.jpg");
+				  background-size: contain;
+				  background-repeat: repeat-x;
+				  background-position: center;
+				}
+
+				.hidden { display: none; }
+
+				.footer {
+				  position: fixed;
+				  bottom: 30px;
+				  left: 50%;
+				  transform: translateX(-50%);
+				  font-size: 20px;
+				  background-image: url('https://i.pinimg.com/1200x/2d/5f/46/2d5f46a663639addc739b6b8cdc09808.jpg');
+				  color: #345535;
+				  opacity: 0.8;
+				  padding: 5px 10px;
+				  border-radius: 6px;
+				}
+
+
+			    .footer {
+			        position: fixed;
+			        bottom: 30px;
+			        left: 50%;
+			        transform: translateX(-50%);
+			        font-size: 20px;
+			        background-image: url('https://i.pinimg.com/1200x/2d/5f/46/2d5f46a663639addc739b6b8cdc09808.jpg');
+			        color: #345535;
+			        opacity: 0.8;
+			        z-index: 10;
+			    }
+
+
+			    /* Responsive design */
+			    @media (max-width: 1200px) {
+			        .title {
+			            font-size: clamp(2.5rem, 10vw, 4rem);
+			            margin-bottom: 1.5rem;
+			        }
+
+			        .start-btn {
+			            font-size: 2rem;
+			            padding: 15px 40px;
+			        }
+
+			        .footer {
+			            font-size: 0.8rem;
+			            bottom: 20px;
+			        }
+			    }
+
+			    @media (max-width: 1024px) {
+			        .title {
+			            font-size: clamp(2rem, 12vw, 3rem);
+			        }
+
+			        .start-btn {
+			            font-size: 1.8rem;
+			            padding: 12px 35px;
+			        }
+			    }
+
+			    /* start button*/
+			.button {
+			  align-self: center;
+			  background-color: #fff;
+			  background-position: 0 90%;
+			  background-repeat: repeat no-repeat;
+			  background-size: 4px 3px;
+			  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+			  border-style: solid;
+			  border-width: 2px;
+			  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+			  box-sizing: border-box;
+			  color: #2d4a2d;
+			  cursor: pointer;
+			  margin-top: 10px;
+			  display: block;
+			  font-family: 'kindergarten', Sans-Serif;
+			  font-weight: bold;
+			  font-size: 1.5rem;
+			  line-height: 23px;
+			  outline: none;
+			  margin: 1rem auto;
+			  padding: 1rem;
+			  text-decoration: none;
+			  transition: all 235ms ease-in-out;
+			  border-bottom-left-radius: 15px 255px;
+			  border-bottom-right-radius: 225px 15px;
+			  border-top-left-radius: 255px 15px;
+			  border-top-right-radius: 15px 225px;
+			  user-select: none;
+			  -webkit-user-select: none;
+			  touch-action: manipulation;
+			  width: 20%;
+			}
+
+
+			.button:hover {
+			  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+			  transform: translate3d(0, 2px, 0);
+			}
+
+			.button:focus {
+			  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="title">
+				My Portfolio
+				<br />
+				Profile
+			</h1>
+			<button id="startButton" class="button">Start</button>
+			<div id="progressBarContainer" class="progressBarContainer hidden">
+				<div id="progressBar" class="progressBar"></div>
+			</div>
+		</div>
+
+		<footer class="footer">© 2025 Copyright @LuckyLeafArtStudio</footer>
+
+		<script>
+			        /*startscrn*/
+			function startPortfolio() {
+			    // Add click animation
+			    const btn = document.querySelector('.start-btn');
+			    btn.style.transform = 'translateY(-1px) scale(0.98)';
+
+			            // Function to handle the redirect
+			            function redirectToPage() {
+			            window.location.href = redirectUrl;
+			        }
+
+			        // Start the timeout
+			        setTimeout(redirectToPage, timeoutDuration)
+			}
+
+			// Add some interactive effects
+			document.addEventListener('mousemove', (e) => {
+			    const mouseX = e.clientX / window.innerWidth;
+			    const mouseY = e.clientY / window.innerHeight;
+
+			    const title = document.querySelector('.title');
+			    const offsetX = (mouseX - 0.5) * 20;
+			    const offsetY = (mouseY - 0.5) * 20;
+
+			    title.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+			});
+
+			// Add entrance animation
+			window.addEventListener('load', () => {
+			    const container = document.querySelector('.container');
+			    container.style.opacity = '0';
+			    container.style.transform = 'translateY(50px)';
+			    container.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
+
+			    setTimeout(() => {
+			        container.style.opacity = '1';
+			        container.style.transform = 'translateY(-30px)';
+			    }, 300);
+			});
+
+			// Add keyboard support
+			document.addEventListener('keydown', (e) => {
+			    if (e.code === 'Space' || e.code === 'Enter') {
+			        e.preventDefault();
+			        startPortfolio();
+			    }
+			});
+			/*profressbar direct to home*/
+			    const startBtn = document.getElementById("startButton");
+			    const progressBarContainer = document.getElementById("progressBarContainer");
+			    const progressBar = document.getElementById("progressBar");
+
+			    startBtn.addEventListener("click", () => {
+			      startBtn.style.display = "none";
+			      progressBarContainer.classList.remove("hidden");
+
+			      let progress = 0;
+			      const interval = setInterval(() => {
+			        if (progress >= 100) {
+			          clearInterval(interval);
+			          window.location.href = "home.html"; // redirect when done
+			        } else {
+			          progress++;
+			          progressBar.style.width = progress + "%";
+			        }
+			      }, 80); // update every 30ms (≈3 seconds total)
+			    });
+		</script>
+	</body>
+</html>

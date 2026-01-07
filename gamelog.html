@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>GameLog</title>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://luckyleafartstudio.nekoweb.org/img/bow.png"
+		/>
+		<style>
+			@font-face {
+				font-family: 'kindergarten';
+				src: url('fonts/kindergarten.ttf') format('truetype');
+			}
+
+			@font-face {
+				font-family: 'Autumn Crush';
+				src: url('fonts/Autumn Crush.ttf') format('truetype');
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				cursor: url('https://luckyleafartstudio.nekoweb.org/img/Cursor%20(1).png'), auto;
+			}
+
+			/* For clickable elements */
+			a, button, .button, .player iframe, .chat-window, [role="button"], input[type="submit"], input[type="button"] {
+				cursor: url('https://luckyleafartstudio.nekoweb.org/img/cursor%20(2).png'), pointer !important;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				background-image: url('https://luckyleafartstudio.nekoweb.org/img/gamelog_imgs/bg.jpg');
+				font-family: 'kindergarten';
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				overflow-x: hidden;
+				position: relative;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.game_title {
+				text-align: center;
+				margin-bottom: 20px;
+				z-index: 10;
+			}
+
+			.home {
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				z-index: 100;
+			}
+
+			.home img {
+				width: 80px;
+				height: auto;
+				transition: transform 0.3s ease;
+			}
+
+			.home img:hover {
+				transform: scale(1.1);
+			}
+
+			.background-layer {
+				position: relative;
+				width: 100%;
+				max-width: 1000px;
+			}
+
+			.buttons-container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 20px;
+			}
+
+			.game-button {
+				display: block;
+				transition: transform 0.3s ease;
+			}
+
+			.game-button:hover {
+				transform: scale(1.05);
+			}
+
+			.game-button img {
+				width: 300px;
+				height: auto;
+			}
+
+			.girl {
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				z-index: 5;
+			}
+
+			.girl img {
+				height: 400px;
+				width: auto;
+			}
+
+			/* Responsive adjustments */
+			@media (max-width: 768px) {
+				.game_title img {
+					width: 90%;
+					max-width: 500px;
+				}
+
+				.background-layer img {
+					width: 90%;
+				}
+
+				.game-button img {
+					width: 250px;
+				}
+
+				.girl img {
+					height: 300px;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.game-button img {
+					width: 200px;
+				}
+
+				.girl img {
+					height: 200px;
+					right: 100px;
+				}
+
+				.home {
+					top: 10px;
+					right: 10px;
+				}
+
+				.home img {
+					width: 60px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="game_title">
+			<img
+				src="https://luckyleafartstudio.nekoweb.org/img/gamelog_imgs/header.png"
+				title="header"
+				alt="Game Log Header"
+			/>
+		</div>
+
+		<div class="home">
+			<a href="home.html">
+				<img
+					src="https://luckyleafartstudio.nekoweb.org/img/gamelog_imgs/homebtn.png"
+					alt="Home Button"
+					class="sticker-bottom-right"
+				/>
+			</a>
+		</div>
+
+		<div class="container">
+			<div class="background-layer">
+				<img
+					src="https://luckyleafartstudio.nekoweb.org/img/gamelog_imgs/bg_layer.png"
+					alt="Background Layer"
+				/>
+				<div class="buttons-container">
+					<a href="#" class="game-button ps4-button">
+						<img
+							src="https://luckyleafartstudio.nekoweb.org/img/gamelog_imgs/button1.png"
+							alt="PS4 Games"
+						/>
+					</a>
+					<a href="#" class="game-button windows-button">
+						<img
+							src="https://luckyleafartstudio.nekoweb.org/img/gamelog_imgs/button2.png"
+							alt="Windows Games"
+						/>
+					</a>
+					<a href="#" class="game-button mobile-button">
+						<img
+							src="https://luckyleafartstudio.nekoweb.org/img/gamelog_imgs/button3.png"
+							alt="Mobile Games"
+						/>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="girl">
+			<img
+				src="https://luckyleafartstudio.nekoweb.org/img/gamelog_imgs/img.png"
+				alt="Character Image"
+			/>
+		</div>
+
+		<script>
+			// Add interactivity to buttons
+			document.addEventListener('DOMContentLoaded', function() {
+				const ps4Button = document.querySelector('.ps4-button');
+				const windowsButton = document.querySelector('.windows-button');
+				const mobileButton = document.querySelector('.mobile-button');
+
+				ps4Button.addEventListener('click', function(e) {
+					e.preventDefault();
+					alert('PS4 Games section would open here!');
+					// In a real implementation, you would navigate to a PS4 games page
+				});
+
+				windowsButton.addEventListener('click', function(e) {
+					e.preventDefault();
+					alert('Windows Games section would open here!');
+					// In a real implementation, you would navigate to a Windows games page
+				});
+
+				mobileButton.addEventListener('click', function(e) {
+					e.preventDefault();
+					alert('Mobile Games section would open here!');
+					// In a real implementation, you would navigate to a mobile games page
+				});
+			});
+		</script>
+	</body>
+</html>
